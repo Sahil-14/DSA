@@ -1,0 +1,6 @@
+
+2) Duplicates
+3) array sorting using quicksort in depth analysis
+4) Alternate negtive and positive
+5) GCD In given range
+6) Jump

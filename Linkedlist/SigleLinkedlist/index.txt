@@ -1,0 +1,590 @@
+0.operations
+  1.push
+   public void push(int data) {
+    Node node = new Node(data);
+    if (head == null) {
+      head = node;
+    } else {
+      node.next = head;
+      head = node;
+
+    }
+  }
+
+  2.append
+  public void append(int data) {
+    Node new_node = new Node(data);
+    if (head == null) {
+      head = new_node;
+      return;
+    }
+    Node last = head;
+    while (last.next != null) {
+      last = last.next;
+    }
+    last.next = new_node;
+  }
+
+  3.delete
+  public void delete(int key) {
+    // if head == null
+    if (head == null) {
+      return;
+    }
+    Node temp = head;
+    // if deleted node is head
+    if (temp.data == key) {
+      head = temp.next;
+      return;
+    }
+    // traverse till key
+    Node prev = null;
+    while (temp != null && temp.data != key) {
+      prev = temp;
+      temp = temp.next;
+    }
+
+    // chek if it is null
+    if (temp == null) {
+      return;
+    }
+    // change link
+    prev.next = temp.next;
+  }
+
+  4 deleteAtK
+
+  public void deleteAtK(int position) {
+    if (head == null) {
+      return;
+    }
+    Node temp = head;
+    if (position == 1) {
+      head = temp.next;
+      return;
+    }
+
+    for (int i = 0; temp != null && i < position - 1; i++) {
+      temp = temp.next;
+    }
+
+    if (temp == null || temp.next == null) {
+      return;
+    }
+
+    Node next = temp.next.next;
+    temp.next = next;
+  }
+
+
+1.Count frequecy
+  create count variable ,Node temp and store head;
+  while(temp != null) : if (temp.data = item) count++
+
+
+
+2.Detect Loop
+  # method 1: hashing
+   HashSet<Node> hs = new HashSet<>();
+
+    Node temp = head;
+    while (temp != null) {
+      if (hs.contains(temp)) {
+        return true;
+      }
+      hs.add(temp);
+      temp = temp.next;
+
+    }
+    return false;
+
+  # method 2 : Flag with modifed data structrure
+     Node current = head;
+        while (current != null) {
+            if (current.flag == 1) {
+                return true;
+            }
+            current.flag = 1;
+            current = current.next;
+        }
+        return false;
+
+  #Method 3:Floyd’s Cycle-Finding Algorithm
+        // first increament slow and fast ptr
+        Node slow_pointer = head;
+        Node fast_pointer = head;
+        int f = 0;
+        while (slow_pointer != null && fast_pointer != null && fast_pointer.next != null) {
+            slow_pointer = slow_pointer.next;
+            fast_pointer = fast_pointer.next.next;
+            if (slow_pointer == fast_pointer) {
+                f = 1;
+                break;
+            }
+           
+        }
+        if (f == 1) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+3.Find mid
+  #method 1 : slowptr and fastptr
+  int printMiddleUsingTwoPointer(){
+        Node slow_pointer =head;
+        Node fast_pointer = head;
+        if(head != null){
+            while(fast_pointer != null && fast_pointer.next != null){
+                slow_pointer = slow_pointer.next;
+                fast_pointer = fast_pointer.next.next;
+            }
+        }
+        return slow_pointer.data;
+    }
+
+    #method 2: odd increamentor
+    int printMiddleByOddCount(){
+        int count = 0;
+        Node mid = head;
+        Node temp = head;
+
+        while(temp != null){
+            
+            if(count %2 == 1){
+                mid = mid.next;
+            }
+            ++count;
+            temp = temp.next;
+            
+        }
+        return mid.data;
+    }
+
+4.Remove duplicated 
+ 1.from unsorted
+ void removeDuplicateUsingHashing() {
+        HashSet<Integer> hs = new HashSet<>();
+        Node current = head;
+        Node prev = null;
+        while (current != null) {
+            int curval = current.data;
+            if (hs.contains(curval)) {
+                prev.next = current.next;
+            } else {
+                hs.add(curval);
+                prev = current;
+            }
+            current = current.next;
+        }
+
+    }
+
+  2.sorted
+  void removeDuplicate() {
+        Node current = head;
+        while (current != null) {
+            Node temp = current;
+            while (temp != null && temp.data == current.data) {
+                temp = temp.next;
+            }
+            current.next = temp;
+            current = current.next;
+
+        }
+    }
+
+5.count the length of loop
+int countNodes(Node n){
+        int res = 1;
+        Node temp = n;
+        while(temp.next != n){
+            res++;
+            temp = temp.next;
+        }
+        return res;
+    }
+    int countNodesInLoop(){
+        Node slow_ptr = head;
+        Node fast_ptr = head;
+        while(slow_ptr != null && fast_ptr != null && fast_ptr.next != null){
+            slow_ptr = slow_ptr.next;
+            fast_ptr = fast_ptr.next.next;
+            if(slow_ptr == fast_ptr){
+                return countNodes(slow_ptr);
+            }
+        }
+        return 0;
+    }
+
+6.get nth Node
+//handel corner case
+if head == null : return -1;
+from i = 0 to i < index traverse linked list
+check if current is nullv : return -1
+else return current.next;
+
+7.reverse
+ void reverse() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
+     Node reverseRec(Node head) {
+        if (head == null || head.next == null)
+            return head;
+        /*
+         * reverse the rest list and put the first element at the end
+         */
+        Node rest = reverseRec(head.next);
+        head.next.next = head;
+        head.next = null;
+        return rest;
+    }
+
+    void reverseLLUsingStack(){
+        Stack<Node> s = new Stack<>();
+        Node temp = head;
+        while(temp.next != null){
+            s.add(temp);
+            temp = temp.next;
+        }
+        head = temp;
+        while(!s.isEmpty()){
+            temp.next = s.peek();
+            s.pop();
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
+
+8. Reverse k node in group
+    Node prev = null;
+        Node curr = head;
+        Node next = null;
+        int count = 0;
+        while (curr != null && count < k) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            count++;
+        }
+        if (next != null) {
+            head.next = reverseK(next, k);
+        }
+        return prev;
+
+    }
+
+  9.Search
+   public boolean search(int data) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == data) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    public boolean searchRec(Node head,int data){
+        Node current = head;
+        if(current == null){
+            return false;
+        }
+        if(current.data == data){
+            return true;
+        }
+        return searchRec(current.next, data);
+        
+    }
+
+10.Get Intersection
+get count of node int list1 c1,and list2 c2
+calculate distace d
+traverse bigger list
+traverse both list
+        int c1 = getCount(head1);
+        int c2 = getCount(head2);
+        if (c1 > c2) {
+            int d = c1 - c2;
+            return getIntersectionNode(d, head1, head2);
+        } else {
+            int d = c2 - c1;
+            return getIntersectionNode(d, head2, head1);
+        }
+    }
+
+    int getIntersectionNode(int d, Node node1, Node node2) {
+        int i;
+        Node current1 = node1;
+        Node current2 = node2;
+        for (i = 0; i < d; i++) {
+            if (current1 == null) {
+                return -1;
+            }
+            current1 = current1.next;
+
+        }
+        while (current1 != null && current2 != null) {
+            if (current1.data == current2.data) {
+                return current1.data;
+            }
+            current1 = current1.next;
+            current2 = current2.next;
+        }
+        return -1;
+    }
+
+11. Merge linked list (IMP)
+Method1.
+ Node sortedMerge2(Node A,Node B){
+        if(A == null ){
+            return B;
+        }
+        if(B == null){
+            return A;
+        }
+        if(A.data < B.data){
+            A.next = sortedMerge2(A.next, B);
+            return A;
+        }else{
+            B.next = sortedMerge2(A, B.next);
+            return B;
+        }
+    }
+
+   Node sort(Node head1,Node head2){
+        Node dummyNode = new Node(0);
+        Node tail = dummyNode;
+        while(true){
+            if(head1 == null){
+                tail.next = head2;
+                break;
+            }
+            if(head2 == null){
+                tail.next = head1;
+                break;
+            }
+            if(head1.data < head2.data){
+                tail.next = head1;
+                head1 = head1.next;
+            }else{
+                tail.next = head2;
+                head2 = head2.next;
+            }   
+            tail = tail.next;
+        }
+        return dummyNode.next;
+    }
+
+12.merge sort
+base case(IMP) : if (h == null || h.next == null) {
+            return h;
+              }
+// set the next of middle node to null(vVVVVVVVVVVVVVIMP)
+        middle.next = null; // IMP
+
+ node mergeSort(node h)
+    {
+        // Base case : if head is null
+        if (h == null || h.next == null) {
+            return h;
+        }
+        // get the middle of the list
+        node middle = getMiddle(h);
+        node nextofmiddle = middle.next;
+ 
+        // set the next of middle node to null
+        middle.next = null; // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvIMP
+ 
+        node left = mergeSort(h);
+ 
+        node right = mergeSort(nextofmiddle);
+ 
+        // Merge the left and right lists
+        node sortedlist = sortedMerge(left, right);
+        return sortedlist;
+
+    }
+
+13. swap node withoud swapping data
+ void swapNode(int x, int y) {
+        if (x == y)
+            return;
+        // Search for x (keep track of prevX and CurrX)
+        Node prevX = null, currX = head;
+        while (currX != null && currX.data != x) {
+            prevX = currX;
+            currX = currX.next;
+        }
+        // Search for y (keep track of prevY and currY)
+        Node prevY = null, currY = head;
+        while (currY != null && currY.data != y) {
+            prevY = currY; 
+            currY = currY.next;
+        }
+        // If either x or y is not present, nothing to do
+        if (currX == null || currY == null)
+            return;
+        // If x is not head of linked list
+        if(prevX != null)
+            prevX.next = currY;
+        else    
+            head = currY;
+        // If y is not head of linked list
+        if(prevY != null)
+            prevY.next = currX;
+        else    
+            head = currX;
+        
+        // Swap next pointers
+        Node temp = currX.next;
+        currX.next = currY.next;
+        currY.next = temp; 
+
+    }
+
+14.check list is palindrome
+boolean isPalindrome() {
+        Stack<Integer> s = new Stack<>();
+        Node temp = head;
+        boolean flag = false;
+        while (temp != null) {
+            s.push(temp.data);
+            temp = temp.next;
+        }
+
+        while (!s.isEmpty()) {
+            int i = s.pop();
+            if (i == head.data) {
+                flag = true;
+
+            } else {
+                flag = false;
+                break;
+            }
+            head = head.next;
+        }
+        return flag;
+    }
+
+
+15.Pairwise swap
+/**
+ * Given a singly linked list, write a function to swap elements pairwise. Input
+ * : 1->2->3->4->5->6->NULL Output : 2->1->4->3->6->5->NULL
+ */
+ void swapPairwise() {
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            int swap = temp.data;
+            temp.data = temp.next.data;
+            temp.next.data = swap;
+            temp = temp.next.next;
+        }
+    }
+
+
+16. Nth node last
+void printNthFromLast(int n){
+        int len = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            len++;
+        }
+        if(len < n)
+        return;
+        temp = head;
+        for(int i = 1;i<len-n+1;i++){
+            temp = temp.next;
+        }
+        System.out.println(temp.data);
+    }
+
+16. REverse double ll
+void reverse() {
+        Node temp = null;
+        Node current = head;
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        if (head != null) {
+            head = temp.prev;
+        }
+    }
+
+    // method :2 swap data;
+    void reverse2() {
+        Stack<Integer> s = new Stack<>();
+        Node temp = head;
+        while (temp != null) {
+            s.add(temp.data);
+            temp = temp.next;
+        }
+        temp = head;
+        while (!s.isEmpty()) {
+            temp.data = s.pop();
+            temp = temp.next;
+        }
+    }
+
+17.rearrange even after odd
+    void rearrangeEvenOdd(Node head)
+    {
+          Node odd = head;
+          Node even = head.next;
+          Node evenstart = even;
+          while(odd.next != null && even.next != null){
+              odd.next = even.next;
+              odd = odd.next;
+              even.next = odd.next;
+              even = even.next;
+              
+          }
+          odd.next = evenstart;
+     }
+
+18.rotate by k in anticlockwise
+
+  public Node rotate(Node head, int k) {
+        Node current = head;
+        int count = 1;
+        while(current != null && count <k){
+            count++;
+            current = current.next;
+        }
+        
+        if(current == null){
+            return head;
+        }
+        
+        Node kthnode = current;
+        while(current.next != null){
+            current = current.next;
+        }
+        
+        current.next = head;
+        head = kthnode.next;
+        kthnode.next = null;
+        return head;
+    }
+
+

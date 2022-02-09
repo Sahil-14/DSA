@@ -1,0 +1,5 @@
+1) use queue if you want to print level by level
+2) use stack if you want to print depth
+3) stack to print bottom element first 
+4) queue to print top element first
+5) set right and left order according to stack and queue

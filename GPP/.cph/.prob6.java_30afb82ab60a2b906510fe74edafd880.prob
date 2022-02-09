@@ -1,0 +1,1 @@
+{"name":"Local: prob6","url":"/Users/sahilshimpi/Documents/DSA/GPP/prob6.java","tests":[{"id":1628236923509,"input":"3,4,5","output":"PT"},{"id":1628248169560,"input":"5,4,4","output":"NPT"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/sahilshimpi/Documents/DSA/GPP/prob6.java","group":"local","local":true}

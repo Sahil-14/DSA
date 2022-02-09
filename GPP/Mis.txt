@@ -1,0 +1,429 @@
+1.prime
+
+2.reverse number
+ static int reverse(int n){
+        int reverseNumber = 0;
+        int remainder = 0;
+       
+        while(n > 0){
+            remainder = n%10;
+            reverseNumber = reverseNumber*10+remainder;
+            n = n/10;
+        }
+        return reverseNumber;
+    }
+3.fibbonici
+ static void  fib(int n){
+        int t1 = 0;
+        int t2 = 1;
+        int nextTerm;
+        for(int i = 1;i<=n;i++){
+            System.out.println(t1);
+            nextTerm = t1+t2;
+            t1 = t2 ;
+            t2 = nextTerm;
+        }
+    }
+4. factorial
+    static int fact(int n){
+        if(n == 0){
+            return 1;
+        }
+        return fact(n-1)*n;
+    }
+
+5.ncr
+return fac(n)/fact(r)*fact(n-r);
+
+6.pascal triangular
+static void pascalTriangle(int n){
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<=i;j++){
+                System.out.print(nCr(i, j)+" ");
+            }
+            System.out.println();
+        }
+    }
+
+7. pythagorus
+static boolean pythagoranTriplet(int x,int y,int z){
+        int a = Math.max(x, Math.max(y, z));
+        int b,c;
+        if(a == x){
+            b = y;
+            c = z;
+        }else if(a == y){
+            b = x;
+            c = z;
+        }else{
+            b = x;
+             c = y;
+        }
+
+        if(a*a == (b*b + c*c)){
+            return true;
+        }
+
+        return false;
+    }
+
+8.binary to decimal
+static int binaryToDecimal(int n){
+        int ans = 0;
+        int x = 1;
+        while(n > 0){
+            int y = n%10;
+            ans += x*y;
+            x*=2;
+            n = n/10;
+        }
+        return ans;
+    }
+
+9.decimal to binary
+ static int hexadecimalToDecimal(String n){
+        int ans = 0;
+        int x = 1;
+        int  s = n.length();
+        for(int i = s-1;i>=0;i--){
+            if(n.charAt(i) >= '0'  &&  n.charAt(i) <='9'){
+                ans+=x*(n.charAt(i) - '0');
+            }else if(n.charAt(i) >= 'A'  &&  n.charAt(i) <='F'){
+                ans+=x*(n.charAt(i)-'A'+10);
+            }
+            x*=16;
+        }
+        return ans;
+    }
+
+public void decToBinaryBitwise(int n)
+        {
+            // Size of an integer is assumed to be 32 bits
+            for (int i = 31; i >= 0; i--) {
+                int k = n >> i;
+                if ((k & 1) > 0)
+                    System.out.print("1");
+                else
+                    System.out.print("0");
+            }
+        }
+   
+
+10. binary addition
+
+    static int binaryAddition(int a,int b){
+        int ans = 0;
+        int prevCarry = 0;
+        while(a > 0 && b>0){
+            if(a%2 == 0 && b%2 == 0){
+                ans = ans*10+prevCarry;
+                prevCarry = 0;
+            }else if((a%2 == 0 && b%2 == 1) || (a%2 == 1 && b%2 == 0) ){
+                if(prevCarry == 1){
+                    ans = ans*10 + 0;
+                    prevCarry = 1;
+                }else{
+                    ans = ans*10+1;
+                    prevCarry = 0;
+                }
+            }else{
+                ans = ans*10 + prevCarry;
+                prevCarry = 1;
+            }
+            a /= 10;
+            b /= 10;
+        }
+
+        while(a >0){
+            if(prevCarry == 1){
+                if(a%2 == 1){
+                    ans = ans*10 + 0;
+                    prevCarry = 1;
+                }else{
+                    ans = ans*10 + 1;
+                    prevCarry = 0;
+                }
+            }else{
+                ans = ans*10 + (a%2);
+            }
+            a /= 10;
+        }
+
+        while(b > 0){
+            if(prevCarry == 1){
+                if(b % 2 == 1){
+                    ans = ans*10 + 0;
+                    prevCarry = 1;
+                }else{
+                    ans = ans*10 +1;
+                    prevCarry = 0;
+                }
+            }else{
+                ans = ans*10 + (b%2);
+            }
+            b /= 10;
+        }
+        if(prevCarry == 1){
+            ans = ans*10 +1;
+        }
+
+        return reverse(ans);
+
+    }
+
+11. subarray sum
+
+  static void subarraySum(int a[]) {
+        int n = a.length;
+        int curr = 0;
+        for (int i = 0; i < n; i++) {
+            curr = 0;
+            for (int j = i; j < n; j++) {
+                curr += a[j];
+                System.out.println(curr);
+            }
+        }
+    }
+12 . Longest arithmetic subarray (arithmetic progression)
+
+static int longestArithmaticSubarry(int a[]) {
+        int ans = 2;
+        int pd = a[1] - a[0];
+        int j = 2;// while loop iterator
+        int curr = 2;
+        while (j < a.length) {
+            if (pd == a[j] - a[j - 1]) {
+                curr++;
+            } else {
+                pd = a[j] - a[j - 1];
+                curr = 2;
+            }
+            ans = Math.max(ans, curr);
+            j++;
+        }
+        return ans;
+    }
+
+  13.Recordbreaking day
+  public int recordBreakingDay(int arr[]){
+    int res = 0;
+    int max = Integer.MIN_VALUE;
+    if(arr.length  <=1){
+      return arr.length;
+    }
+   for(int i =0;i<arr.length;i++){
+     if(arr[i] > max && arr[i] > arr[i+1]){
+       res++;
+     }
+     max = Math.max(arr[i], max);
+   }
+  }
+
+  14. Max subarray subarraySum
+  // Kadanes algorithm
+  // O(n)
+    static int kadanesAlgo(int a[]) {
+        int max_so_far = Integer.MIN_VALUE, max_ending_here = 0;
+        for (int i = 0; i < a.length; i++) {
+            max_ending_here = max_ending_here + a[i];
+            if (max_ending_here > max_so_far) {
+                max_so_far = max_ending_here;
+            }
+            if (max_ending_here < 0) {
+                max_ending_here = 0;
+            }
+        }
+        return max_so_far;
+    }
+
+  15.Pairwise sum
+
+  static boolean pairsum(int a[], int n, int k) {
+
+        Arrays.sort(a);
+        int low = 0;
+        int high = n - 1;
+        for (int i : a) {
+            System.out.println(i);
+        }
+        boolean flag = false;
+        while (low < high) {
+            if ((a[low] + a[high]) == k) {
+                return true;
+            } else if ((a[low] + a[high]) > k) {
+                high--;
+            } else {
+                low++;
+            }
+        }
+        return false;
+    }
+
+16.Matrix mulitiplication
+static int multipli(int n1,int n2,int n3){
+   for (int i = 0; i < n1; i++) {
+            for (int j = 0; j < n3; j++) {
+                for (int k = 0; k < n2; k++) {
+                    ans[i][j] += m1[i][k] * m2[k][j];
+                }
+            }
+        }
+}
+
+17.Matrix search
+  search in a matrix which is sorted in row and column wise
+  static boolean matrixSearch(int a[][],int n,int m,int key){
+        int r = 0,c = m-1;
+        while(r <n && c >= 0){
+            if(a[r][c] == key){
+                return true;
+            }else if(a[r][c] < key){
+                r++;
+            }else{
+                c--;
+            }
+        }
+        return false;
+    }
+18.Maxworld length in string 
+static int maxWordLength(String s){
+        char a[] = s.toCharArray();
+        System.out.println(a.length);
+       
+        int currleng = 0,maxleng =0;
+     
+       
+
+        for(int i = 0;i<s.length();i++){
+            if(a[i] == ' ' ){
+                if(currleng > maxleng){
+                    maxleng = currleng;
+                }
+                currleng = 0;
+            }else{
+                currleng++;
+            }
+           
+        }
+        if(currleng > maxleng){
+            maxleng = currleng;
+        }
+        return maxleng;
+    } 
+
+19. check no, is prime or not
+ static void SOE(int n){
+        int prime[] = new int[100];
+        Arrays.fill(prime, 0);
+
+        for(int i = 2;i<=n;i++){
+            if(prime[i] == 0){
+                for(int j = i*i;j<=n;j+=i){
+                    prime[j] = 1;
+                }
+            }
+        }
+
+        for(int i = 2;i<=n;i++){
+            if(prime[i] == 0){
+                System.out.println(i);
+            }
+        }
+    }
+20.prime factorisation
+    static void primeFactor(int n){
+        int spf[] = new int[100];
+        Arrays.fill(spf, 0);
+
+        for(int i= 0;i<=n;i++){
+            spf[i] = i;
+        }
+
+        for(int i=2;i<=2;i++){
+            if(spf[i] == i){
+                for(int j = i*i;j<=n;j+=i){
+                    if(spf[j] == j){
+                        spf[j] = i;
+                    }
+                }
+            }
+        }
+
+        while(n != 1){
+            System.out.println(spf[n]);
+            n = n/spf[n];
+        }
+    }
+
+21.  // how many numbers between a 1 and 1000 are divisble by 5 or 7
+    static int divisible(int n,int a,int b){
+        int c1 = n/a;
+        int c2 = n/b;
+        int c3 = n/(a*b);
+        return c1+c2-c3;
+    }
+
+    static int gcdByMod(int a,int b){
+        int c = a%b;
+        while(c != 0){
+            a = b;
+            b = c;
+            c = a%b;
+        }
+        return b;
+    }
+
+22
+int gcd(int a, int b)
+{
+    // Everything divides 0
+    if (a == 0)
+       return b;
+    if (b == 0)
+       return a;
+  
+    // base case
+    if (a == b)
+        return a;
+  
+    // a is greater
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
+}
+
+23.
+ static int sum(int n){
+        if(n == 0){
+            return 0;
+        }
+
+        int prevsum = sum(n-1);
+        return n+ prevsum;
+    }
+
+    // n raised to power p
+    static int power(int n,int p){
+        if(p == 0){
+            return 1;
+        }
+        int prevPower = power(n, p-1);
+        return n * prevPower;
+    }
+    static int factorial(int n){
+        if(n == 0){
+            return 1;
+        }
+        return factorial(n-1)*n;
+    }
+    //print nth fibonacci;
+    static int fibonacci(int n){
+        if(n == 0){
+            return 0;
+        }
+        if(n == 1){
+            return 1;
+        }
+        return fibonacci(n-1)+fibonacci(n-2);
+    }
+   

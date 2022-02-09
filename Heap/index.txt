@@ -1,0 +1,52 @@
+Heap 
+current = i
+left = 2*i+1
+right = 2*i+2
+parent = (current -1)/2
+heapify starting index while building max/min heap = n/2 -1
+
+1.Heapify
+ it is method to build Heapif
+ heapify works in     top  ---->   bottom 
+ get largest = i, left, right 
+ set largest by comparing with left and right 
+ if largest != i : swap(largest ,i)
+ call heapify again;
+ o(n)
+ 
+2.Delete heap (delete from top)
+  temp = arr[0]  # store top element
+  arr[0] = arr[n-1] 
+  heapify(arrr,0,n)
+o(logn)
+
+3.Insert Heap (insert at last)
+  if heap size is 0 : arr[0] = element
+  arr[++size] = element ; # increase size and  insert at bottom
+  current = size 
+  parent = (current -1)/2
+  Maintain maxheap
+  while(current > 0 && arr[current] > arr[parent]){
+    swap(current,parent)
+    current = parent 
+    parent = (current -1)/2
+  }
+o(logn)
+
+4.Buildheap
+  startindex = n/2 -1
+  for(int i =startindex;i>=0;i--){
+    heapify(i)
+  }
+o(nlogn)
+
+5.heapsort
+build heap
+delete element
+for(int i = n-1;i>0;i++){
+  int temp = arr[0]
+  arr[0] = arr[i];
+  arr[i] = temp
+  heapify(arr,i,0) // here i at second arg is important 
+}
+

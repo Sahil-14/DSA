@@ -1,0 +1,88 @@
+1.0/1 knapsack  (2d matrix)
+2. Longest common Subsequece (string)  (2d matrix)
+3. Subset sum (2d matrix)
+4. Matrix multiplication (upper triangular 2d matrix)
+5. coin exchange to form total (2d matrx) space optimizer
+6. Minimum edit distance (2d matrix)  (formula)
+7. longest increasing subsequence length (1d matrix )
+8. Optimal binary search tree (upper triangular 2d matrix) 
+9. Longest palindromic subsequence (upper tringular 2d matirx)  (fromula remaimber) (palindrom)
+10. Regular expression matching (2d matrix) hard
+11. rod cutting problem (2d matrix)
+12. egg dropping problem (2d matrix)
+13. minimum no of jump require to reach end(1d array) (longest increasinng subsequence)
+14. Maximum sum rectangle in 2d array (Kadans algo)(left and right iterator)
+15.coin exchange to form total (2d matrx) space optimizer
+16. coin exchange no of ways (2d matrix)
+17. Maxsize reactangle of all 1's (Max area histogram);
+18. job sequece to maximize profit (compartor for sorting) (lCS iterator)
+19.
+20.Longest commong string
+21.
+22.wildcard matching (2d matrix) (regular expression)
+23.Optimal cost path (2d matrix )
+24.
+25.Maximum subsquare matrix (2d matrix) 
+26.palindromic partition  (upper tringular matrix) (palindrom) (string)
+27.staircase problem (fibonacchi)
+28.Box stacking problem (longest increating subsequence) (compartor sorting)
+29.baloon bursting problem (uppper tringular matrix) (formula)
+30.maximum sum subsequence not adjucent(inclusive exclusive)
+31.string interleaving (2d matrix) (formula) (string)
+32.count the number of binary tree (catalin number)
+33.Maximum sum increasing subsequence (1d array)(Longest increasing subsequence)
+34.count number of path from top left to bottom right(2d matrix)
+35.bitonic number (longest increasing subsequence)
+36.number without consecutive 1ns in binary representative (fibonacci)
+37. Find maximum subsquare in a matrix made up of Xs and Os such that all four
+   sides of subsquare are Xs. It does not matter what is inside
+   the subsquare. All 4 sides should be made up entirely of Xs (2d matrix) (square,rectangle)
+38.Subsquare sum in immutable 2d array (2d array) (reactangle,square)
+  formula for filling matrix T[i][j] = T[i - 1][j] + T[i][j - 1] + matrix[i - 1][j - 1] - T[i - 1][j - 1];
+  formula for calculating sum [row2][col2] - T[row1 - 1][col2] - T[row2][col1 - 1] + T[row1 - 1][col1 - 1];
+39.count no of binary tree of preorder sequence of length n (cataline number)
+ i goes from 2 to n
+ j goes from 0 to i
+40. stock buy sell 
+    T[i][j] =  max of  
+                1.T[i][j-1]  --  no transaction on jth day
+                2.price[j] -price[m](buying at j selling at mth day ) + T[i-1][m]  -- (with one less transation and ending at max)()  as we have m no of days, 
+
+
+
+
+
+
+
+ =====================  subsequence  ===================== 
+ 1. Longest common Subsequece (string)  (2d matrix)  (2)
+ 2. minimum no of jump require to reach end(1d array)  (13)
+ 3.job sequece to maximize profit (compartor for sorting) (lCS iterator) (18)
+ 4.Box stacking problem (28)
+ 5.maximum sum subsequence not adjucent(inclusive exclusive) (30)
+ 6.Maximum sum increasing subsequence (1d array)(Longest increasing subsequence) (33)
+ 7.bitonic number (longest increasing subsequence) (35)
+
+ =====================  reactangle,square   =====================
+ 1. Maximum sum rectangle in 2d array (Kadans algo)(left and right iterator) (14)
+ 2. Maxsize reactangle of all 1's (Max area histogram); (17)
+ 3.Maximum subsquare matrix (2d matrix)  25
+ 4. Find maximum subsquare in a matrix made up of Xs and Os such that all four
+   sides of subsquare are Xs. It does not matter what is inside
+   the subsquare. All 4 sides should be made up entirely of Xs (37)
+ 5.Subsquare sum in immutable 2d array (2d array) (reactangle,square) (38)
+
+=====================   fibonacchi  =====================
+1.staircase problem (27)
+2.number without consecutive 1ns in binary representative (36)
+
+=====================   Cateline  ===================== 
+1.count the number of binary tree (32)
+2.count no of binary tree of preorder sequence of length n (39)
+
+=====================   2d matrix  =====================
+
+
+=====================   Upper tringular  =====================
+
+ =====================   string  =====================

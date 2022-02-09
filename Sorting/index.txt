@@ -1,0 +1,43 @@
+1.bubble sort (n^2)
+  i from i = 0 to i< n-1
+  j from j = 0 to j < j-i-1
+2.selection sort(n^2)
+  array is consider into 2 part sorted and unsorted
+  select the lowest element in unsorted 
+  bring it to the starting postion
+3.quicksort (nlogn) 
+  i,j,and pivot 
+  pivot is last 
+  i  start from low-1 (points to the last element which is smaller than pivot)
+  j  start from o till high-1
+  if(arr[j] < pivot) swap i and just
+  after end of loop i+j element will be greater than pivot hence swap them
+  return i+1
+4.mergesort (nlogn)
+5.heapsort (nlogn) heapify (logn) & create and build o(n)
+6.count sort (n+k) k = range of elements
+  Counting sort is most efficient if the range of input values is not greater than the number of values to be sorted.
+7.Radix sort (n+k)
+  same as count sort just get max number and get max radix value of that number and call countsort for max radix time and each time pass current exponential value
+  modify in count sort output[--count[(arr[i] / exp) % 10]] = arr[i];
+8.insertion sort (n^2)
+  same as patte pisne
+  start from i = 1 to i <n-1
+  store i as current variable
+  for each i:
+    start j from i-1 and if arr[j] > arr[i];
+      arr[j+1] = arr[j] 
+      j--
+    finally arr[j+1] =current
+    because if arr[j] > current we are shifting element to right
+9.wavesort  (arr[i] should be less than arr[i-1] and arr[i+2])
+  from i= 1; i<n;i+=2
+    if :arr[i]> arr[i-1] swap(arr,i,i-1)
+    if :arr[i] > arr[i+1] && i <=n-2 swap(arr,i,i+1) (handel corner case)
+10.dnf sort (sort arry of 0,1,2) here low point to lower boundry of 1 and high points to upper boundery of 1
+
+   initialize low = 0,mid = 0,high = n-1
+   while mid <=high
+    if mid == 0 swap low & mid low++,mid++
+    if mid = 1 mid++
+    if mid = 2  swap mid and high mid++ high--

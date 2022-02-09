@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "Stack",
+        "Sorting",
+        "Misc",
+        "Linkedlist/SigleLinkedlist",
+        "Linkedlist/CircularLinkedList.java",
+        "Linkedlist",
+        "GPP",
+        "Array",
+        "DP"
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
+}
