@@ -1,4 +1,4 @@
-// Longest common subsequence
+// Longest common subsequence  in string
 
 class dp_prob2{
     //using recurrsion

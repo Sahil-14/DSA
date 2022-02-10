@@ -29,7 +29,7 @@ public class dp_prob40 {
         maxDiff = Math.max(maxDiff, T[i - 1][j] - prices[j]);
       }
     }
-    printActualSolution(T, prices);
+    // printActualSolution(T, prices);
     return T[k][prices.length - 1];
   }
 
@@ -56,6 +56,55 @@ public class dp_prob40 {
     }
     printActualSolution(T, prices);
     return T[K][prices.length - 1];
+  }
+
+  static int maxProfitt(int prices[], int size) {
+
+    // maxProfit adds up the difference between
+    // adjacent elements if they are in increasing order
+    int maxProfit = 0;
+
+    // The loop starts from 1
+    // as its comparing with the previous
+    for (int i = 1; i < size; i++)
+      if (prices[i] > prices[i - 1])
+        maxProfit += prices[i] - prices[i - 1];
+    return maxProfit;
+  }
+
+  // use this
+  static int maxProfit(int price[],
+      int n, int k) {
+
+    // table to store results of subproblems
+    // profit[t][i] stores maximum profit
+    // using atmost t transactions up to day
+    // i (including day i)
+    int profit[][] = new int[k + 1][n + 1];
+
+    // For day 0, you can't earn money
+    // irrespective of how many times you trade
+    for (int i = 0; i <= k; i++)
+      profit[i][0] = 0;
+
+    // profit is 0 if we don't do any
+    // transaction (i.e. k =0)
+    for (int j = 0; j <= n; j++)
+      profit[0][j] = 0;
+
+    // fill the table in bottom-up fashion
+    for (int i = 1; i <= k; i++) {
+      int prevDiff = Integer.MIN_VALUE;
+      for (int j = 1; j < n; j++) {
+        prevDiff = Math.max(prevDiff,
+            profit[i - 1][j - 1] -
+                price[j - 1]);
+        profit[i][j] = Math.max(profit[i][j - 1],
+            price[j] + prevDiff);
+      }
+    }
+
+    return profit[k][n - 1];
   }
 
   public void printActualSolution(int T[][], int prices[]) {
@@ -95,6 +144,7 @@ public class dp_prob40 {
     int prices[] = { 2, 5, 7, 1, 4, 3, 1, 3 };
 
     System.out.println("Max profit fast solution " + sbt.maxProfit(prices, 3));
-    System.out.println("Max profit slow solution " + sbt.maxProfitSlowSolution(prices, 3));
+    // System.out.println("Max profit slow solution " +
+    // sbt.maxProfitSlowSolution(prices, 3));
   }
 }
