@@ -49,7 +49,7 @@ public class prob60 {
             int n = q.size();
             for (int i = 1; i <= n; i++) {
                 Node temp = q.peek();
-                q.poll();
+                q.poll(); 
                 if (i == n) {
                     System.out.println(temp.data);
                 }

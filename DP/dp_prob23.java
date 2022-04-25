@@ -1,4 +1,5 @@
 // minimum cost path
+//given a matrix and a start point and end point what is the minimum cost ot reach from start to end;
 public class dp_prob23 {
     public int minCost(int cost[][]) {
         int m = cost.length;
@@ -18,11 +19,7 @@ public class dp_prob23 {
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 T[i][j] = cost[i][j] + Math.min(T[i - 1][j], T[i][j - 1]);// if only right and bottom move allow
-                // T[i][j] = cost[i][j] + Math.min(T[i - 1][j - 1], Math.min(T[i - 1][j], T[i][j
-                // - 1]));// if only right
-                // and bottom move
-                // and diagonal
-                // allow
+               
             }
         }
         path(T, cost, m - 1, n - 1);
@@ -36,13 +33,11 @@ public class dp_prob23 {
             System.out.print(T[0][0] + " ");
             return;
         }
-
         if (i > 0 && (T[i][j] - val[i][j] == T[i - 1][j])) {
             path(T, val, i - 1, j);
         } else if (j > 0 && (T[i][j] - val[i][j] == T[i][j - 1])) {
             path(T, val, i, j - 1);
         }
-
         System.out.print(T[i][j] + " ");
     }
 

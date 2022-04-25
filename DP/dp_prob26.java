@@ -1,4 +1,7 @@
 // palindrome partition
+//given a string how may minimum split you can have in a string such that all indivisual  splits are palindrome
+
+
 class dp_prob26 {
     public boolean isPalindrome(char[] arr, int i, int j) {
         while (i < j) {
@@ -10,6 +13,7 @@ class dp_prob26 {
         }
         return true;
     }
+
     // space efficient
     public static int minCut(String a) {
         int[] cut = new int[a.length()];
@@ -40,23 +44,19 @@ class dp_prob26 {
         for (int l = 2; l <= n; l++) {
             for (int i = 0; i < n - l + 1; i++) {
                 int j = i + l - 1;
-
                 if (l == 2) {
                     P[i][j] = str.charAt(i) == str.charAt(j);
                 } else {
                     P[i][j] = (str.charAt(i) == str.charAt(j)) && P[i + 1][j - 1];
                 }
-
                 if (P[i][j] == true) {
                     T[i][j] = 0;
                 } else {
-
                     T[i][j] = Integer.MAX_VALUE;
                     for (int k = i; k <= j - 1; k++) {
                         T[i][j] = Math.min(T[i][j], 1 + T[i][k] + T[k + 1][j]);
                     }
                 }
-
             }
         }
         for (int i = 0; i < n; i++) {

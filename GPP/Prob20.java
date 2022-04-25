@@ -66,7 +66,7 @@ public class Prob20 {
 
     }
 
-    // generate all substring
+    // generate all subsequence
     static void subSeq(String s, String ans) {
         if (s.length() == 0) {
             System.out.println(ans);
@@ -99,8 +99,8 @@ public class Prob20 {
         // towerOfHanoi(3, 'A', 'C', 'B');
         // System.out.println(removeDuplicates("aaabbbccccddddea"));
         // System.out.println(moveAllX("axeefdsfxrxyuxx"));
-        // subSeq("ABC", "");
-        subSeqAsc("AB","");
+        subSeq("ABC", "");
+        // subSeqAsc("AB","");
 
     }
 }

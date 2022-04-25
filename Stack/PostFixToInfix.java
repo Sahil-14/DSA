@@ -17,7 +17,7 @@ public class PostFixToInfix {
     public static boolean isOperand(char c) {
         return (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z');
     }
-
+ 
     public static String postfixToInfix(String exp) {
         Stack<String> stack = new Stack<>();
         for (int i = 0; i < exp.length(); i++) {

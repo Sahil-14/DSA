@@ -32,7 +32,7 @@ public class prob26 {
         Node todelete = temp.next;
         temp.next = temp.next.next;
         todelete = null;
-        
+         
     }
     boolean search(int key){
         Node temp = head;

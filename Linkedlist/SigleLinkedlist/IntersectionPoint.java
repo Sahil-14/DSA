@@ -35,7 +35,7 @@ public class IntersectionPoint {
         Node current2 = node2;
         for (i = 0; i < d; i++) {
             if (current1 == null) {
-                return 1;
+                return -1;
             }
             current1 = current1.next;
 

@@ -1,4 +1,6 @@
 // Longest bitonic subsequence
+//sequece which increased then decreses
+//calculate longes incresing subsequece from left nad right and add
 public class dp_prob35 {
   public static int bionicSubsequence(int arr[]) {
     int L[] = new int[arr.length];
@@ -27,6 +29,7 @@ public class dp_prob35 {
         }
       }
     }
+    
     int max = Integer.MIN_VALUE;
     for (int i = 0; i < arr.length; i++) {
       if (L[i] + R[i] - 1 > max) {

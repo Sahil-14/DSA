@@ -427,3 +427,212 @@ int gcd(int a, int b)
         return fibonacci(n-1)+fibonacci(n-2);
     }
    
+24
+ static void replaceWithPI(String s) {
+        if (s.length() == 0) {
+            return;
+        }
+        if (s.charAt(0) == 'p' && s.charAt(1) == 'i') {
+            System.out.print("3.14");
+            replaceWithPI(s.substring(2));
+        } else {
+            System.out.print(s.charAt(0));
+            replaceWithPI(s.substring(1));
+        }
+
+    }
+
+25
+// count the number of paths possi le from start point to end point in gameboard
+    // and number of steps to taken is decided by die
+    static int countPath(int s, int e) {
+        if (s == e) {
+            return 1;
+
+        }
+        if (s > e) {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 1; i <= 6; i++) {
+            count += countPath(s + i, e);
+        }
+        return count;
+    }
+
+26
+//count path in maze
+  static int countmazePath(int n, int i, int j) {
+        if (i == n - 1 && j == n - 1) {
+            return 1;
+        }
+        if (i >= n || j >= n) {
+            return 0;
+        }
+
+        return countmazePath(n, i + 1, j) + countmazePath(n, i, j + 1);
+ }
+
+27
+
+   // tilling problem
+    // given "2 x n" board and tiles of size "2 X 1" count the number of ways to
+    // tile the given board using these tiles
+
+    static int tilling(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        if (n == 1) {
+            return 1;
+        }
+
+        return tilling(n - 1) + tilling(n - 2);
+    } 
+
+
+28. sliding window to find max sum in array
+    static int maxSum(int arr[], int n, int k) {
+        if (n < k) {
+            System.out.println("invalid");
+            return -1;
+        }
+        int maxSum = 0;
+        for (int i = 0; i < k; i++) {
+            maxSum += arr[i];
+        }
+
+        int windowSum = maxSum;
+        for (int i = k; i < n; i++) {
+            windowSum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, windowSum);
+        }
+
+        return maxSum;
+
+    }
+
+29. trapping rainwater stack
+ static int trappingWaterArea(int arr[], int n) {
+        Stack<Integer> s = new Stack<>();
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            while (!s.isEmpty() && arr[s.peek()] < arr[i]) {
+                int curr = s.peek();
+                s.pop();
+                if (s.isEmpty()) {
+                    break;
+                }
+                int diff = i - s.peek() - 1;
+                ans += (Math.min(arr[s.peek()], arr[i]) - arr[curr]) * diff;
+            }
+            s.push(i);
+
+        }
+        return ans;
+    }
+
+30 redendantParenthesis
+
+      static boolean redendantParenthesis(char[] s) {
+        boolean ans = false;
+        Stack<Character> st = new Stack<>();
+        for (int i = 0; i < s.length; i++) {
+            if (s[i] == '+' || s[i] == '-' || s[i] == '/' || s[i] == '*') {
+                st.push(s[i]);
+            } else if (s[i] == '(') {
+                st.push(s[i]);
+            } else if (s[i] == ')') {
+                if (!st.isEmpty() && st.peek() == '(') {
+                    ans = true;
+                }
+                while (!st.isEmpty()
+                        && (st.peek() == '*' || st.peek() == '+' || st.peek() == '-' || st.peek() == '/')) {
+                    st.pop();
+                }
+                if (!st.isEmpty()) {
+                    st.pop();
+                }
+
+            }
+        }
+        if (!st.isEmpty()) {
+            return true;
+        }
+        return ans;
+    }
+
+31.two pointer 
+   static boolean twoPointer(int arr[], int n, int target) {
+        boolean found = false;
+        for (int i = 0; i < n; i++) {
+            int lo = i + 1, hi = n - 1;
+            while (lo < hi) {
+                int current = arr[i] + arr[lo] + arr[hi];
+                if (current == target) {
+                    found = true;
+                }
+                if (current < target) {
+                    lo++;
+                } else {
+                    hi--;
+                }
+            }
+
+        }
+        if(found){
+            return true;
+        }
+        return false;
+    }
+
+32. stock span  
+public void stockspn(int arr[], int n, int s[]) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        s[0] = 1;
+        for (int i = 1; i < n; i++) {
+            while (!stack.isEmpty() && arr[i] >= arr[stack.peek()]) {
+                stack.pop();
+            }
+            s[i] = stack.isEmpty() ? i + 1 : i - stack.peek();
+            
+            stack.push(i);
+        }
+    }
+
+33. max consecutive zero
+ static int maxConsZero(int a[], int n, int k) {
+        int zerocount = 0, i = 0, ans = 0;
+        for (int j = 0; j < n; j++) {
+            if (a[j] == 0) {
+                zerocount++;
+            }
+            while (zerocount > k) {
+                if (a[i] == 0) {
+                    zerocount--;
+                }
+                i++;
+            }
+            ans = Math.max(ans, j - i + 1);
+        }
+        return ans;
+    }
+
+ public static void main(String[] args) {
+    String s = "pwwkew";
+
+    int arr[] = new int[256];
+    Arrays.fill(arr, -1);
+    int maxlen = 0, start = -1;
+    for (int i = 0; i < s.length(); i++) {
+      if (arr[s.charAt(i)] > start) {
+        start = arr[s.charAt(i)];
+      }
+      arr[s.charAt(i)] = i;
+      maxlen = Math.max(maxlen, i - start);
+    }
+    System.out.println(maxlen);
+    // kew
+  }

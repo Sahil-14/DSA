@@ -99,7 +99,7 @@ public class prob56 {
         root.left.right = bt.new Node(5);
         root.right.left = bt.new Node(6);
         root.right.right = bt.new Node(7);
-        bt.printLevelOrderUsingNull(root);
-        // System.out.println(bt.sumAtK(root, 2));
+        // bt.printLevelOrderUsingNull(root);
+        System.out.println(bt.sumAtK(root, 2));
     }
 }

@@ -16,9 +16,9 @@
 16. Bit manipulation challanges
 17.Sieve of eratostheme
 18.Principle of inclusion and exclusion(No of ways to do something)
-19.recursion
+19.recursion (sum, power, factorical, fibbonaci)
 20.recursion quesion
-21.Advance recursion(permutation of string,count total path,maze)
+21.Advance recursion(permutation of string,count total path,maze,tilling,friend paair)
 22.Backtracking (rat in maze)
 23.permutation
 24.Nqueen
@@ -34,7 +34,33 @@
 34.merge list
 35.circular linked list
 36.rearrange even after odd
-
-
+37.stack operations
+38.reverse statement
+39.reverse stack with extra stactk
+40.expression conversion usig stack
+41.queue implementation arr
+42.queue implementation linked list
+43.queue implementation using 2 stack
+44.-
+45.sliding window to to int max in window size in arr
+46.largest histogram area
+47.trapping rainwate problem stack
+48.redendent parenthesis stack
+49.stock span
+50. check sum of 3 number is equal to given number using 2 pointer.
+51. Max subarray with only 
+52. max length substring with repeting character
+53. tree traversal
+54. build tree from inorde and preorder array
+55. build tree from inorder and postorder array
+56. level order ,reverselevelorder traverse and sumAtkth level 
+57. size ,height,sum and diameter of bt
+58.sum replace replace data of node with sum at left and right
+59.check if tree is height balanced
+60.left view and right view of bt
+61.distance between 2 nodes
+62. flattern bt into linked list
+63.find all nodes at distance k
+64. lowest common ansestor
 /// for playing with java multiple class read prob65
 // cataline number prob72

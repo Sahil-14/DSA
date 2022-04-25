@@ -20,7 +20,6 @@ public class dp_prob22 {
                 isFirst = true;
             }
         }
-
         boolean T[][] = new boolean[str.length + 1][writeIndex + 1];
         if (writeIndex > 0 && pattern[0] == '*') {
             T[0][1] = true;

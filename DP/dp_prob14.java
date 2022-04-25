@@ -24,7 +24,7 @@ public class dp_prob14 {
         int rightBound;
         int upBound;
         int lowBound;
-
+        
         @Override
         public String toString() {
             return "Result [maxSum=" + maxSum + ", leftBound=" + leftBound

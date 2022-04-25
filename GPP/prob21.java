@@ -55,7 +55,7 @@ public class prob21 {
 
         return tilling(n - 1) + tilling(n - 2);
     }
-
+    
     // freind pairing problem
     // find the number of ways in which n friends can remain single or can be paired
     // up
@@ -80,10 +80,10 @@ public class prob21 {
     }
 
     public static void main(String arg[]) {
-        // permutation("ABC", "");
+        permutation("ABC", "");
         // System.out.println(countPath(0, 3));
         // System.out.println(countmazePath(3, 0, 0));
-        System.out.println(tilling(3));
+        // System.out.println(tilling(3));
         // System.out.println(freindPair(3));
         // int wt[] = {10,20,30};
         // int value[] ={100,50,150};

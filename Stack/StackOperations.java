@@ -28,6 +28,7 @@ public class StackOperations {
             return x;
         }
     }
+    
 
     int peek(){
         if(top < 0){

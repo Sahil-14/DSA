@@ -1,5 +1,5 @@
-// build binary tree using preorder and inorder sequence
-
+// build  tree using preorder and inorder sequence
+//in pre order sequece root is primnted first , find root in preorder ane left of root in inorder is left and right of root is rigjt
 class TreeNode {
     int data;
     TreeNode left;
@@ -16,17 +16,18 @@ public class prob54 {
 
     TreeNode root;
     static int preIndex = 0;
-    TreeNode buildTree(int inorder[],int preorder[],int start,int end){
-        if(start > end){
+
+    TreeNode buildTree(int inorder[], int preorder[], int start, int end) {
+        if (start > end) {
             return null;
         }
         TreeNode node = new TreeNode(preorder[preIndex++]);
-        if(start == end ){
+        if (start == end) {
             return node;
         }
         int index = search(inorder, start, end, node.data);
-        node.left = buildTree(inorder, preorder, start, index-1);
-        node.right = buildTree(inorder, preorder, index+1, end);
+        node.left = buildTree(inorder, preorder, start, index - 1);
+        node.right = buildTree(inorder, preorder, index + 1, end);
         return node;
     }
 

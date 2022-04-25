@@ -1,4 +1,5 @@
 //fibonnaci series 
+// note in fibonnaci we have to return sum 
 //staircase problem
 public class dp_prob27 {
     public int fibonnaciSeries(int n) {
@@ -31,7 +32,9 @@ public class dp_prob27 {
 
     public static void main(String[] args) {
         dp_prob27 fb = new dp_prob27();
-        System.out.print(fb.fibonnaciSeries(0));
+        System.out.print(countWays(5) + "\n");
+        System.out.print(fb.fibonnaciSeries(5));
+
     }
 
 }

@@ -19,104 +19,77 @@
 
 public class dp_prob13 {
     public int minJump(int arr[], int result[]) {
+        int n = arr.length;
         int jump[] = new int[arr.length];
         jump[0] = 0;
-        // importatna
-        for (int i = 1; i < arr.length; i++) {
-            jump[i] = Integer.MAX_VALUE - 1;
+        if (n == 0 || arr[0] <= 0) {
+            return Integer.MAX_VALUE;
         }
+        
 
         for (int i = 1; i < arr.length; i++) {
+            jump[i] = Integer.MAX_VALUE;
             for (int j = 0; j < i; j++) {
-                if (j + arr[j] >= i) {
-                    if (jump[i] > jump[j] + 1) {
-                        result[i] = j;
-                        jump[i] = jump[j] + 1;
-
-                    }
+                if (j + arr[j] >= i && jump[j] != Integer.MAX_VALUE){
+                    jump[i] = Math.min(jump[i],jump[j] + 1);
+                    result[i] = j;
+                    break;
                 }
             }
-        }
+        } 
         // print path
         System.out.print(result[0]);
         for (int i = 0; i < arr.length - 1; i++) {
             if (result[i + 1] != result[i]) {
                 System.out.print(" - " + result[i + 1]);
             }
-
         }
         System.out.print(" - " + (arr.length - 1));
         System.out.println();
         return jump[jump.length - 1];
     }
 
-    public int jump(int[] nums) {
-        if (nums.length == 1) {
+  
+    static int minJumps(int arr[]) {
+        if (arr.length <= 1)
             return 0;
-        }
-        int count = 0;
-        int i = 0;
-        while (i + nums[i] < nums.length - 1) {
-            int maxVal = 0;
-            int maxValIndex = 0;
-            for (int j = 1; j <= nums[i]; j++) {
-                if (nums[j + i] + j > maxVal) {
-                    maxVal = nums[j + i] + j;
-                    maxValIndex = i + j;
-                }
+
+        // Return -1 if not possible to jump
+        if (arr[0] == 0)
+            return -1;
+        // initialization
+        int maxReach = arr[0];
+        int step = arr[0];
+        int jump = 1;
+
+        // Start traversing array
+        for (int i = 1; i < arr.length; i++) {
+            // Check if we have reached the end of the array
+            if (i == arr.length - 1)
+                return jump;
+
+            // updating maxReach
+            maxReach = Math.max(maxReach, i + arr[i]);
+
+            // we use a step to get to the current index
+            step--;
+
+            // If no further steps left
+            if (step == 0) {
+                // we must have used a jump
+                jump++;
+
+                // Check if the current index/position or lesser index
+                // is the maximum reach point from the previous indexes
+                if (i >= maxReach)
+                    return -1;
+
+                // re-initialize the steps to the amount
+                // of steps to reach maxReach from position i.
+                step = maxReach - i;
             }
-            i = maxValIndex;
-            count++;
         }
-        return count + 1;
 
-    }
-
-    static int minJumps(int arr[]) 
-    { 
-        if (arr.length <= 1) 
-            return 0; 
-  
-        // Return -1 if not possible to jump 
-        if (arr[0] == 0) 
-            return -1; 
-  
-        // initialization 
-        int maxReach = arr[0]; 
-        int step = arr[0]; 
-        int jump = 1; 
-  
-  
-        // Start traversing array 
-        for (int i = 1; i < arr.length; i++) 
-        { 
-            // Check if we have reached the end of the array 
-            if (i == arr.length - 1) 
-                return jump; 
-  
-            // updating maxReach 
-            maxReach = Math.max(maxReach, i+arr[i]); 
-  
-            // we use a step to get to the current index 
-            step--; 
-  
-            // If no further steps left 
-            if (step == 0) 
-            { 
-                //  we must have used a jump 
-                jump++; 
-                   
-                //Check if the current index/position  or lesser index 
-                // is the maximum reach point from the previous indexes 
-                if(i>=maxReach) 
-                   return -1; 
-  
-                // re-initialize the steps to the amount 
-                // of steps to reach maxReach from position i. 
-                step = maxReach - i; 
-            } 
-        } 
-  
         return -1;
     }
 

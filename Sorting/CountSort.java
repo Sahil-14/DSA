@@ -34,7 +34,6 @@ public class CountSort {
             // int current = arr[i];
             // int index = --count[arr[i]];
             arr2[--count[arr[i]]] = arr[i];
-
         }
         printArray(arr2);
     }

@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * 
@@ -10,8 +10,30 @@ import java.util.Map;
  * 
  */
 
+// input format
+// 4 - size
+// 1, 4, 5, 7 -value array
+// 1, 3, 4, 5 -weight array
+
 public class dp_prob1 {
     public int bottomUpDP(int val[], int wt[], int W) {
+        Scanner s = new Scanner(System.in);
+        int length = s.nextInt();
+        String valString = s.next();
+        // method 1:
+        // String[] valArray = valString.split(",");
+        // for (int i = 0; i < length; i++) {
+        // val[i] = Integer.parseInt(valArray[i]);
+        // }
+        // method 2:
+        int valArray[] = Arrays.stream(valString.split(",")).mapToInt(Integer::parseInt).toArray();
+
+        String wtString = s.next();
+        String[] wtArray = wtString.split(",");
+        for (int i = 0; i < length; i++) {
+            wt[i] = Integer.parseInt(wtArray[i]);
+        }
+
         int k[][] = new int[val.length + 1][W + 1];
         for (int i = 0; i <= val.length; i++) {
             for (int j = 0; j <= W; j++) {
@@ -102,6 +124,6 @@ public class dp_prob1 {
         int r = k.bottomUpDP(val, wt, 7);
         int r2 = k.topDownRecursive(val, wt, 7);
         System.out.println(r);
-        System.out.println(r2);
+        // System.out.println(r2);
     }
 }

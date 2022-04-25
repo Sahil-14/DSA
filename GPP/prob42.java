@@ -17,7 +17,6 @@ public class prob42 {
         Queue() {
             this.front = null;
             this.back = null;
-
         }
 
         public void push(int data) {

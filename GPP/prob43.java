@@ -1,5 +1,10 @@
 import java.util.Stack;
+//quee implementation using stack
 
+//dqueue operation
+//1.if both stack are empth then print error
+//2.if stack 2 is empty , while stack1 is not empty  push everything from stack1 to stack2
+//3 pop the elemnt from stack2 and return it.
 public class prob43 {
     class Queue{
         Stack<Integer> s1 = new Stack<>();

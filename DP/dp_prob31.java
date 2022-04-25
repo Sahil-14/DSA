@@ -1,4 +1,7 @@
 // string interleavition
+//given 3 strings you have to  tell 3rd string is interleaving of not . Interleaving 
+//means 3rd string should  be entirely made up of characters of 1st nad 2nd string & order should be preserve
+
 public class dp_prob31 {
     public boolean isInterleaved(char str1[], char str2[], char str3[]) {
         boolean T[][] = new boolean[str1.length + 1][str2.length + 1];

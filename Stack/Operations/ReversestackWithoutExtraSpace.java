@@ -1,4 +1,3 @@
-package Operations;
 
 import java.util.Stack;
 
@@ -38,23 +37,22 @@ public class ReversestackWithoutExtraSpace {
             s = s.next;
         }
         System.out.println();
-
     }
 
-    public void reverse(){
-        StackNode curr,prev,next;
+    public void reverse() {
+        StackNode curr, prev, next;
         prev = next = null;
         curr = this.top;
-        while(curr != null){
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
-            prev  = curr;
+            prev = curr;
             curr = next;
         }
         this.top = prev;
     }
 
-    public static void main(String arg[]){
+    public static void main(String arg[]) {
         ReversestackWithoutExtraSpace s = new ReversestackWithoutExtraSpace();
         s.push(1);
         s.push(2);

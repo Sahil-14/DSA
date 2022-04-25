@@ -14,6 +14,7 @@ class dp_prob2{
     }
 
     public int lcsDynamic(char str1[],char str2[]){
+        Scanner s = new Scanner(System.in);
     
         int temp[][] = new int[str1.length + 1][str2.length + 1];
         int max = 0;

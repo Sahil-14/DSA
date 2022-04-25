@@ -16,12 +16,12 @@
 16. coin exchange no of ways (2d matrix)
 17. Maxsize reactangle of all 1's (Max area histogram);
 18. job sequece to maximize profit (compartor for sorting) (lCS iterator)
-19.
+19. Word break problem (upper diagonal matrix)
 20.Longest commong string
-21.
+21.Text justification priblem
 22.wildcard matching (2d matrix) (regular expression)
 23.Optimal cost path (2d matrix )
-24.
+24.Optimal strategy game pick
 25.Maximum subsquare matrix (2d matrix) 
 26.palindromic partition  (upper tringular matrix) (palindrom) (string)
 27.staircase problem (fibonacchi)
@@ -69,9 +69,9 @@
  3.Maximum subsquare matrix (2d matrix)  25
  4. Find maximum subsquare in a matrix made up of Xs and Os such that all four
    sides of subsquare are Xs. It does not matter what is inside
-   the subsquare. All 4 sides should be made up entirely of Xs (37)
+   the subsquare. All 4 sides should be made up entirely of Xs (37) (hard)
  5.Subsquare sum in immutable 2d array (2d array) (reactangle,square) (38)
-
+  note : sum = kadands and size = histogram
 =====================   fibonacchi  =====================
 1.staircase problem (27)
 2.number without consecutive 1ns in binary representative (36)

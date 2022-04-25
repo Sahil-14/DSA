@@ -41,6 +41,26 @@ public class prob45 {
         System.out.print(arr[q.peek()]);
     }
 
+    static int maxSum(int arr[], int n, int k) {
+        if (n < k) {
+            System.out.println("invalid");
+            return -1;
+        }
+        int maxSum = 0;
+        for (int i = 0; i < k; i++) {
+            maxSum += arr[i];
+        }
+
+        int windowSum = maxSum;
+        for (int i = k; i < n; i++) {
+            windowSum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, windowSum);
+        }
+
+        return maxSum;
+
+    }
+
     public static void main(String arg[]) {
         int arr[] = { 12, 1, 78, 90, 57, 89, 56 };
         int k = 3;

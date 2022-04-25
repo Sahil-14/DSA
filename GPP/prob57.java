@@ -10,42 +10,48 @@ public class prob57 {
             this.right = null;
         }
     }
-    int count(Node root){
-        if(root == null){
+
+    int count(Node root) {
+        if (root == null) {
             return 0;
         }
         int left = count(root.left);
         int right = count(root.right);
-        return left+right+1;
+        return left + right + 1;
     }
-    int sum(Node root){
-        if(root == null){
+
+    int sum(Node root) {
+        if (root == null) {
             return 0;
         }
         int left = sum(root.left);
         int right = sum(root.right);
-        return left+right+root.data;
+        return left + right + root.data;
     }
-    int height(Node root){
-        if(root == null){
+
+    int height(Node root) {
+        if (root == null) {
+            // return -1;
             return 0;
         }
         int left = height(root.left);
         int right = height(root.right);
-        return Math.max(left, right) +1;
+        return Math.max(left, right) + 1;
     }
+
     // o(n^2)
-    int calDiameter(Node root){
-        if(root == null){
+    int calDiameter(Node root) {
+        if (root == null) {
             return 0;
         }
         int lheight = height(root.left);
         int rheight = height(root.right);
-        int currDiameter = lheight + rheight +1;
+        int currDiameter = lheight + rheight + 1;
         int lDiameter = calDiameter(root.left);
         int rDiameter = calDiameter(root.right);
-        return Math.max(currDiameter,Math.max(lDiameter, rDiameter));
+        return Math.max(currDiameter, Math.max(lDiameter, rDiameter));
     }
+
     public static void main(String[] args) {
         prob57 bt = new prob57();
         Node root = bt.new Node(1);

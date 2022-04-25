@@ -16,7 +16,6 @@
 public class dp_prob29 {
     public int maxValBottomUp(int nums[]) {
         int T[][] = new int[nums.length][nums.length];
-
         for (int l = 1; l <= nums.length; l++) {
             for (int i = 0; i <= nums.length - l; i++) {
                 int j = i + l - 1;

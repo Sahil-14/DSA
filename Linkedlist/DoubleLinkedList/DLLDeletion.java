@@ -70,7 +70,7 @@ public class DLLDeletion {
         }
         return;
     }
-
+ 
     public static void main(String arg[]) {
         DLLDeletion dll = new DLLDeletion();
         dll.push(2);

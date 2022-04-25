@@ -25,6 +25,7 @@
     last.next = new_node;
   }
 
+
   3.delete
   public void delete(int key) {
     // if head == null
@@ -80,6 +81,8 @@
 1.Count frequecy
   create count variable ,Node temp and store head;
   while(temp != null) : if (temp.data = item) count++
+
+
 
 
 
@@ -236,7 +239,7 @@ else return current.next;
             prev = current;
             current = next;
         }
-        head = prev;
+        head = prev; 
     }
 
      Node reverseRec(Node head) {
@@ -457,6 +460,7 @@ base case(IMP) : if (h == null || h.next == null) {
 
     }
 
+
 14.check list is palindrome
 boolean isPalindrome() {
         Stack<Integer> s = new Stack<>();
@@ -497,7 +501,6 @@ boolean isPalindrome() {
         }
     }
 
-
 16. Nth node last
 void printNthFromLast(int n){
         int len = 0;
@@ -514,8 +517,8 @@ void printNthFromLast(int n){
         }
         System.out.println(temp.data);
     }
-
-16. REverse double ll
+ 
+17. REverse double ll
 void reverse() {
         Node temp = null;
         Node current = head;
@@ -587,4 +590,114 @@ void reverse() {
         return head;
     }
 
+19.circular ll travarsal & count
+  void printlist(Node head){
+        Node temp = head;
+        if(head != null){
+            do{
+                System.out.print(temp.data+" ");
+                temp = temp.next;
+            }while(temp != head);
+        }
+    }
 
+     int countNode(Node head){
+        Node temp = head;
+        int result = 0;
+        if(head != null){
+            do{
+                result++;
+                temp = temp.next;
+            }while(temp != head);
+        }
+        return result;
+    }
+
+
+20 push to cll
+  Node push(Node head,int data){
+        Node ptr1 = new Node();
+        Node temp = head;
+        ptr1.data = data;
+        ptr1.next = head;
+         /* If linked list is not null
+    then set the next of last node */
+    if(head != null){
+        while(temp.next != head){
+            temp = temp.next;
+        }
+        temp.next = ptr1;
+    }else{
+        ptr1.next = ptr1;
+    }
+    head = ptr1;
+    return head;
+    }
+
+21. check if list is circular or not
+static boolean isCircular(Node head) {
+        if (head == null)
+            return true;
+        Node node = head.next;
+
+        while (node != null && node != head)
+            node = node.next;
+
+        return (node == head);
+}
+ 
+22. swap 1st and last node of cll
+ Node exchangeNode(Node head) {
+        // if length of list is 2
+        if (head.next.next == head) {
+            head = head.next;
+            return head;
+        }
+        Node p = head;
+        while (p.next.next != head) {
+            p = p.next;
+        }
+        p.next.next = head.next;
+        head.next = p.next;
+        p.next = head;
+        head = head.next;
+        return head;
+    }
+
+23.delete node
+Node deleteNode(Node head,int key){
+        if(head == null)
+            return null;
+        
+        Node curr = head,prev = new Node();
+        while(curr.data != key){
+            if(curr.next == head){
+                System.out.println("Node not found");
+                break;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        // if only one node
+        if(curr == head && curr.next == head){
+            head = null;
+            return head;
+        }
+        // if there are more than 1 node
+        //if first node
+        if(curr == head){
+            prev = head;
+        while(prev.next != head){
+            prev = prev.next;
+        }
+        head = curr.next;
+        prev.next = head;
+        }
+        //check if it is last node
+        else if(curr.next == head){
+            prev.next = head;
+        }else{
+            prev.next = curr.next;
+        }
+        return head;
+    }

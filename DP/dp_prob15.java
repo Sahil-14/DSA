@@ -10,7 +10,7 @@ public class dp_prob15 {
             R[i] = -1;
         }
         for (int i = 0; i < coins.length; i++) {
-            for (int j = 1; j <= total; j++) {
+            for (int j = 1; j <= total; j++) { 
                 if (j >= coins[i]) {
                     if (T[j] > 1 + T[j - coins[i]]) {
                         T[j] = 1 + T[j - coins[i]];
@@ -22,6 +22,8 @@ public class dp_prob15 {
         printCombinations(R, coins);
         return T[total];
     }
+
+   
 
     private void printCombinations(int R[], int coins[]) {
         if (R[R.length - 1] == -1) {
@@ -37,6 +39,8 @@ public class dp_prob15 {
         }
         System.out.println();
     }
+    
+
 
     public static void main(String[] args) {
         int total = 13;

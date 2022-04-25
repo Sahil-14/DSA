@@ -72,7 +72,7 @@ public class InfixToPrefix {
                 while (!stack.isEmpty() && stack.peek() != '(') {
                     result += stack.pop();
                 }
-                // remove ')'
+                // remove '('
                 stack.pop();
             } else {
                 while (!stack.isEmpty() && prec(c) < prec(stack.peek())) {

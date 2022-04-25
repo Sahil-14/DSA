@@ -13,7 +13,7 @@ class Job {
 }
 
 class FinishTimeComparator implements Comparator<Job> {
-
+    // sort in increasing order
     @Override
     public int compare(Job arg0, Job arg1) {
         if (arg0.end <= arg1.end) {
@@ -36,7 +36,6 @@ public class dp_prob18 {
         int T[] = new int[jobs.length];
         FinishTimeComparator fc = new FinishTimeComparator();
         Arrays.sort(jobs, fc);
-
         T[0] = jobs[0].profit;
         for (int i = 1; i < jobs.length; i++) {
             T[i] = Math.max(jobs[i].profit, T[i - 1]);
@@ -47,15 +46,6 @@ public class dp_prob18 {
                 }
             }
         }
-        // for (int i = 1; i < jobs.length; i++) {
-        // T[i] = Math.max(jobs[i].profit, T[i - 1]);
-        // for (int j = 0; j < i; j++) {
-        // if (jobs[j].end <= jobs[i].start) {
-        // T[i] = Math.max(T[i], jobs[i].profit + T[j]);
-
-        // }
-        // }
-        // }
         int maxVal = Integer.MIN_VALUE;
         for (int val : T) {
             if (maxVal < val) {

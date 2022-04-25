@@ -36,17 +36,13 @@ class Dimension implements Comparable<Dimension> {
     int height;
     int length;
     int width;
-
     Dimension(int height, int length, int width) {
         this.height = height;
         this.length = length;
         this.width = width;
     }
-
     Dimension() {
-
     }
-
     static Dimension CreateDimetion(int height, int side1, int side2) {
         Dimension d = new Dimension();
         d.height = height;

@@ -1,39 +1,64 @@
 import java.util.*;
 
 // Stock span
+//it is defined as the maximum number of consecutive days (starting from today and going backward) for which 
+// the price of the stocks was less than or equal to todays price
+// find the span of thre stocks  for all the days
 public class prob49 {
-    public static void stockSpan(int[] prices) {
+    static void calculateSpan(int price[], int n, int S[]) {
+        // Create a stack and push index of first element
+        // to it
+        Stack<Integer> st = new Stack<>();
+        st.push(0);
 
-        Stack<Integer> s = new Stack();
-        int[] span = new int[prices.length];
+        // Span value of first element is always 1
+        S[0] = 1;
 
-        // Step 1. Initialization
-        span[0] = 1;
-        s.push(0);
+        // Calculate span values for rest of the elements
+        for (int i = 1; i < n; i++) {
 
-        for (int i = 1; i < prices.length; i++) {
-            // Find the price on stack which is greater than current day's price
-            while (!s.empty() && prices[i] > prices[s.peek()]) {
-                s.pop();
+            // Pop elements from stack while stack is not
+            // empty and top of stack is smaller than
+            // price[i]
+            while (!st.empty() && price[st.peek()] <= price[i])
+                st.pop();
 
-                if (s.isEmpty())
-                    span[i] = i + 1;
-                else
-                    span[i] = i - s.peek();
+            // If stack becomes empty, then price[i] is
+            // greater than all elements on left of it, i.e.,
+            // price[0], price[1], ..price[i-1]. Else price[i]
+            // is greater than elements after top of stack
+            S[i] = (st.empty()) ? (i + 1) : (i - st.peek());
 
-                // Push current day onto top of stack
-                s.push(i);
+            // Push this element to stack
+            st.push(i);
+        }
+    }
+
+    public void stockspn(int arr[], int n, int s[]) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        s[0] = 1;
+        for (int i = 1; i < n; i++) {
+            while (!stack.isEmpty() && arr[i] >= arr[stack.peek()]) {
+                stack.pop();
             }
+            s[i] = stack.isEmpty() ? i + 1 : i - stack.peek();
+            
+            stack.push(i);
         }
-        for (int i = 0; i < span.length; i++) {
-            System.out.println(span[i]);
-        }
+    }
+
+    static void printArray(int arr[]) {
+        System.out.print(Arrays.toString(arr));
     }
 
     public static void main(String[] args) {
         // int[] arr ={100, 60, 70, 65, 80, 85, 45, 77, 56, 98, 200};
         int arr[] = { 100, 80, 60, 70, 60, 75, 85 };
-        stockSpan(arr);
+        int n = arr.length;
+        int S[] = new int[n];
+        calculateSpan(arr, n, S);
+        printArray(S);
 
     }
 }

@@ -15,7 +15,7 @@ class InfixToPostfix {
         }
         return -1;
     }
-
+    
     static String infixToPostfix(String exp) {
         String result = new String("");
         Stack<Character> stack = new Stack<>();

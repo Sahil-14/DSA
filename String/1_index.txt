@@ -1,0 +1,7 @@
+1.palindrom
+2.find the length of largest word in string
+3.reverse string;
+4.remove duplicates from string
+5.move all x to end
+6.print all subsequence;]
+7.pring all permutations

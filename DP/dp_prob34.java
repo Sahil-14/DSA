@@ -5,7 +5,6 @@ public class dp_prob34 {
         for (int i = 0; i < n; i++) {
             T[i][0] = 1;
         }
-
         for (int i = 0; i < m; i++) {
             T[0][i] = 1;
         }

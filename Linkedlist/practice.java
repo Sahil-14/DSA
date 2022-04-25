@@ -173,6 +173,24 @@ public class practice {
     head = prev;
   }
 
+  public Node reverseK(Node head, int k) {
+    Node prev = null;
+    Node curr = head;
+    Node next = null;
+    int count = 0;
+    while (curr != null && count < k) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+      count++;
+    }
+    if (next != null) {
+      head = reverseK(next, k);
+    }
+    return head;
+  }
+
   public void moveFirstToLast() {
     Node temp = head;
     Node prev = null;
@@ -240,22 +258,63 @@ public class practice {
     }
   }
 
-  public void deletedd(Node del) {
-    if(head == null || del == null){
-      return ;
+  public void withoutSwap(int x, int y) {
+    if (x == y) {
+      return;
     }
-    if(head == del){
-      head = del.next;
+    Node prevX = null, currX = head;
+    while (currX != null || currX.data != x) {
+      prevX = currX;
+      currX = currX.next;
     }
-    // change next of prev
-    // if not last 
-    if(del.next != null){
-      del.prev.next = del.next;
-    }
-    // if not first
-    if(del.prev != null){
-      del.next.prev = del.prev;
-    } 
 
+    Node prevY = null, currY = head;
+    while (currY != null || currY.data != x) {
+      prevY = currY;
+      currY = currY.next;
+    }
+
+    if (currY == null || currY == null) {
+      return;
+    }
+    if (prevX == null) {
+      head = currY;
+    } else {
+      prevX.next = currY;
+    }
+
+    if (prevY == null) {
+      head = currX;
+    } else {
+      prevY.next = currX;
+    }
+
+    Node temp = currX.next;
+    currX.next = currY.next;
+    currY.next = temp;
   }
+
+  public Node rotateK(int k) {
+    int count = 1;
+    Node current = head;
+
+    while (current != null && count < k) {
+      current = current.next;
+      count++;
+    }
+    if (current == null) {
+      return head;
+    }
+
+    Node kthNode = current;
+    while (current.next != null) {
+      current = current.next;
+    }
+
+    current.next = head;
+    head = kthNode.next;
+    kthNode.next = null;
+    return head;
+  }
+
 }

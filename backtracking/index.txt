@@ -1,1 +1,2 @@
 1.rat in maze
+2.N queen
