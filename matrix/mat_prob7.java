@@ -17,6 +17,9 @@ public class mat_prob7 {
         a[N - 1 - i][N - 1 - j] = a[j][N - 1 - i];
         a[j][N - 1 - i] = temp;
       }
+
+
+      
     }
   }
 

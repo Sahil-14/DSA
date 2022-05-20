@@ -13,14 +13,14 @@ public class prob83 {
             sum += arr.get(i);
         }
         if (sum % 3 == 0) {
-          
+
             ans = new Point(0, i - 1);
             found = 1;
-            
+
         }
 
         for (int j = i; j < n; j++) {
-            if (found ==1) {
+            if (found == 1) {
                 break;
             }
             sum = sum + arr.get(j) - arr.get(j - k);

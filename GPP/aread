@@ -60,7 +60,24 @@
 60.left view and right view of bt
 61.distance between 2 nodes
 62. flattern bt into linked list
-63.find all nodes at distance k
+63.find all nodes at distance k (read)
 64. lowest common ansestor
+65.Maximum path sum
+66.bst operations
+67.bst deletions
+68.build bst from preoder array
+69.isbst
+70.crate bst from sorted array
+71.zig -zak traversal
+72.print all posible bst for key n
+73.isBST identical
+74.largest bst in bt
+75.largest bst in bt
+76.
+77.page allocation
+78.painter partition problem
+79.search in sorted rotated
+80.find peak
+81.sliding window maxsubarry sum of size k and less than x
 /// for playing with java multiple class read prob65
 // cataline number prob72

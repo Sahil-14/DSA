@@ -16,7 +16,6 @@ public class PrefixToInfix {
             case '*':
             case '/':
                 return true;
-
         }
         return false;
     }

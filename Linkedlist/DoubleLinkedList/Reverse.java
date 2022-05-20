@@ -44,7 +44,7 @@ public class Reverse {
             current = current.prev;
         }
 
-        if (head != null) {
+        if (temp != null) {
             head = temp.prev;
         }
     }

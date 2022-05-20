@@ -3,6 +3,8 @@
 // calculate sum  of first k elements
 // initialize ans with th sum
 //iterate over the rest of the arr keep adding one elemets in sum and removing one from start compare new sum with ans in each iteration
+
+
 public class prob81 {
     static int maxSumSubarryX(int arr[],int k,int x){
         int sum=0;int ans = 0;

@@ -32,7 +32,7 @@ public class prob98 {
         int size = adjL.size();
         for (int i = 0; i < size; i++) {
             for (int j : adjL.get(i)) {
-                adjM[i][j] = 1;
+                adjM[i][j] = j;
             }
         }
         return adjM;

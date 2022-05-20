@@ -4,7 +4,6 @@ import java.util.*;
 
 public class prob107 {
     private static final int V = 5;
-
     // A utility function to find the vertex with minimum key
     // value, from the set of vertices not yet included in MST
     int findMinkey(int key[], Boolean mstSet[]) {
@@ -66,6 +65,7 @@ public class prob107 {
         printMst(parent, graph);
 
     }
+
     public static void main(String[] args)
     {
         /* Let us create the following graph

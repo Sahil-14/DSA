@@ -5,6 +5,8 @@
  * approch 1 : generate all subarrays of size k  and count the number of perfect numbers O(n * k)
  * approch 2 : convert given array into binary array with values 0 and 1   and use sliding window approch (n *sqrt(n))
  * 
+ * eg number = 6  , proper divisors =[1,2,3] and theire sum 6
+ * 
  */
 public class prob85 {
     static boolean isNumberPerfect(int n){

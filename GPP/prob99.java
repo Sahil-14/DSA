@@ -38,17 +38,17 @@ public class prob99 {
         }
     }
 
-    void DFS(int s,boolean [] visited) {
-       visited[s] = true;
-       System.out.println(s);
-       Iterator<Integer> i = adj[s].listIterator();
+    void DFS(int s, boolean[] visited) {
+        visited[s] = true;
+        System.out.println(s);
+        Iterator<Integer> i = adj[s].listIterator();
 
-       while(i.hasNext()){
-           int n = i.next();
-           if(!visited[n]){
-               DFS(n, visited);
-           }
-       }
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!visited[n]) {
+                DFS(n, visited);
+            }
+        }
 
     }
 
@@ -61,12 +61,13 @@ public class prob99 {
         g.addEdge(2, 3);
         g.addEdge(3, 3);
 
-        // System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        // System.out.println("Following is Breadth First Traversal " + "(starting from
+        // vertex 2)");
         // g.BFS(2);
         boolean visited[] = new boolean[g.V];
-        System.out.println("Following is Depth First Traversal " + "(starting from vertex 2)");
+        System.out.println("Following is Depth First Traversal ");
 
-        g.DFS(2,visited);
+        g.DFS(2, visited);
 
     }
 }

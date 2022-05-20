@@ -1,7 +1,11 @@
 public class prob_str7 {
   public static void permutation(String s, String ans) {
     if (s.length() == 0) {
-      System.out.println(ans);
+      // System.out.println(ans);
+      return;
+    }
+    if (s.length() == 0) {
+      // System.out.println(ans);
       return;
     }
     for (int i = 0; i < s.length(); i++) {
@@ -12,7 +16,7 @@ public class prob_str7 {
   }
 
   public static void main(String[] args) {
-    permutation("abc", "");
+    permutation("1234", "");
   }
-  
+
 }

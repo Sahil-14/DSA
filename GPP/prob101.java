@@ -6,7 +6,6 @@ import java.util.*;
 public class prob101 {
     // No. of vertices
     private int V;
-
     // Adjacency List Representation
     private LinkedList<Integer> adj[];
 
@@ -26,7 +25,6 @@ public class prob101 {
         // Mark the current node as visited
         visited[v] = true;
         Integer i;
-
         // Recur for all the vertices
         // adjacent to this vertex
         Iterator<Integer> it = adj[v].iterator();
@@ -63,7 +61,6 @@ public class prob101 {
         // function to detect cycle in
         // different DFS trees
         for (int u = 0; u < V; u++) {
-
             // Don't recur for u if already visited
             if (!visited[u])
                 if (isCyclicUtil(u, visited, -1))
@@ -81,9 +78,9 @@ public class prob101 {
         g1.addEdge(0, 3);
         g1.addEdge(3, 4);
         if (g1.isCyclic())
-        System.out.println("Graph contains cycle");
+            System.out.println("Graph contains cycle");
         else
-        System.out.println("Graph doesn't contains cycle");
+            System.out.println("Graph doesn't contains cycle");
 
         prob101 g2 = new prob101(3);
         g2.addEdge(0, 1);

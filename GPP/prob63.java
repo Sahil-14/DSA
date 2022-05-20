@@ -32,12 +32,14 @@ public class prob63 {
             printSubtreeNodes(root, k);
             return 0;
         }
+         
         int dl = printNodeAtk(root.left, target, k);
        if(dl != 1){
+           //current node is at kth distance form target
            if(dl+1 == k){
                System.out.print(root.data);
            }else{
-               printSubtreeNodes(root, k-dl-2);
+               printSubtreeNodes(root.right, k-dl-2);
            }
            return 1+dl;
        }
@@ -46,7 +48,7 @@ public class prob63 {
            if(dr+1 == k){
                System.out.print(root.data);
            }else{
-               printSubtreeNodes(root, k-dr-2);
+               printSubtreeNodes(root.left, k-dr-2);
            }
            return 1+dr;
        }

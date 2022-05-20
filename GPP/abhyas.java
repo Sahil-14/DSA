@@ -12,7 +12,7 @@ class abhyas {
         }
       }
     }
-
+    
     for (int i = 2; i <= n; i++) {
       if (prime[i] == 0) {
         System.out.println(i);

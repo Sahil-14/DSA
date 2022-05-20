@@ -35,6 +35,7 @@ public class bit_prob_8 {
         y = y ^ i;
       }
     }
+    
     System.out.println(x);
     System.out.println(y);
   }

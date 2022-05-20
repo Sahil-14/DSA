@@ -31,16 +31,14 @@ public class prob66 {
         }else if(root.data > key){
             return search(root.left, key);
         }
-        return search(root.right, key);
-
-        
+        return search(root.right, key);  
     }
     void inorder(Node root){
         if(root == null){
             return ;
         }
        
-    
+
         inorder(root.left);
         System.out.println(root.data);
         inorder(root.right);

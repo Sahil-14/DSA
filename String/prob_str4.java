@@ -2,8 +2,8 @@
 
 public class prob_str4 {
   public static String removeDuplicates(String s) {
-    if (s.length() == 0) {
-      return " ";
+    if (s.length() <= 1) {
+      return s;
     }
     char ch = s.charAt(0);
     String ans = removeDuplicates(s.substring(1));

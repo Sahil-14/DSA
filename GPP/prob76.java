@@ -1,8 +1,10 @@
 import java.util.Arrays;
 
 // binary search ch.1
-// given is ans array with n elements that represents n positionas along a straight line .
-// find k elements such that the mininum distance between any 2 elements is the maximum possible
+// given is an  array with n elements that represents n positionas along a
+// straight line .
+// find k elements such that the mininum distance between
+// any 2 elements is the maximum possible
 
 
 public class prob76 {

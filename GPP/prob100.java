@@ -1,10 +1,12 @@
 // topological sort
-// a topological ordering is an ordering of the nodes in a directed graph where for each directed edge fromnode a to node b 
+// a topological ordering is an ordering of the nodes
+//  in a directed graph where for each directed edge from node a to node b 
 //node a appeares before node b in ordering
 
 //topological ordering is not unique
 // not every graph has topological sort eg.for cycle graph
 // only directed acyclic graph have a valid topological sort
+
 import java.util.*;
 public class prob100 {
     private int V;
@@ -24,8 +26,6 @@ public class prob100 {
     }
     void topologicalSortUtil(int v,Stack<Integer> stack,boolean[] visited){
         visited[v] = true;
-        
-
         Iterator<Integer> it = adj.get(v).iterator();
         while(it.hasNext()){
             int  n = it.next();
@@ -38,20 +38,20 @@ public class prob100 {
     void topologicalSort(){
         Stack<Integer> stack = new Stack<Integer>();
         boolean visited[] = new boolean[V];
-
-        for(int i = 0;i<V;i++){
-            visited[i]= false;
+        for (int i = 0; i < V; i++) {
+            visited[i] = false;
         }
-
-        for(int i = 0;i<V;i++){
-            if(!visited[i]){
-                topologicalSortUtil(i,stack,visited);
+        
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                topologicalSortUtil(i, stack, visited);
             }
         }
-
-        while(!stack.isEmpty()){
-            System.out.println(stack.pop()+" ");
+        
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop() + " ");
         }
+        
     }
 
     public static void main(String args[])

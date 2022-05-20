@@ -11,7 +11,6 @@ public class prob82 {
        while(end < n){
            while(sum <=x && end < n){
                sum+=arr[end++];
-
            }
            while(sum > x && start >n){
                if(end -start < minLength){

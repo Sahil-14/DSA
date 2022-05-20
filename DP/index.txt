@@ -18,7 +18,7 @@
 18. job sequece to maximize profit (compartor for sorting) (lCS iterator)
 19. Word break problem (upper diagonal matrix)
 20.Longest commong string
-21.Text justification priblem
+21.Text justification priblem /word wrap
 22.wildcard matching (2d matrix) (regular expression)
 23.Optimal cost path (2d matrix )
 24.Optimal strategy game pick

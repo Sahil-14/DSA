@@ -20,7 +20,6 @@ public class bit_prob_10 {
     if (n < 0) {
       n = -n;
     }
-
     // Get floor(n/2) using
     // right shift
     int x = n >> 1;

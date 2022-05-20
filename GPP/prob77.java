@@ -8,17 +8,20 @@ public class prob77 {
     static boolean isPossible(int arr[],int n,int m,int min){
         int studentRequiered = 1,sum = 0;
         for(int i = 0;i<n;i++){
-            if(arr[i] > min){
+            if (arr[i] > min) {
                 return false;
             }
+            //pages we are giving to current student
             if(sum+arr[i] > min){
                 studentRequiered++;
+                //if we want to give min pages to student cant increase it ferther
                 sum = arr[i];
                 if(studentRequiered > m){
                     return false;
                 }
 
-            }else{
+            } else {
+                
                 sum+=arr[i];
             }
         }
