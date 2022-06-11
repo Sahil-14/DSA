@@ -1,3 +1,21 @@
 1. Inrder ,preorder ,postorder iterative/recursive travaelsel
 2.build tree from inorder and preorder array;
 3.build tree from inorder and postorder array
+4size,depth,heigh ,diameter of tree
+5.level order /reverse level order
+6.sum of all node at kth level
+7.leftview and rightview
+8.replace sum of node equal to sum of leftsubtree and rightsubtree
+9.check if tree is height balanced or not
+10.Lowest common ansestor
+   distance between 2 nodes
+11.flattern a binary tree in preorder way
+12.
+13.find maxsum path in binary tree
+14.bst operations
+15.inorder predecessor / successor
+16.check if tree is bst 
+17.create bst from preorder
+18.sorted array to bst
+19.zigzag traversal
+20.check if 2 bst are identical

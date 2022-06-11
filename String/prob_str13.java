@@ -12,7 +12,7 @@ public class prob_str13 {
         if (l == 2 && str.charAt(i) == str.charAt(j)) {
           temp[i][j] = 2;
         } else if (str.charAt(i) == str.charAt(j)) {
-          temp[i][j] = 2 + t[i + 1][j][j - 1][i];
+          temp[i][j] = 2 + t[i + 1][j - 1];
         } else {
           temp[i][j] = Math.max(temp[i + 1][j], temp[i][j - 1]);
         }

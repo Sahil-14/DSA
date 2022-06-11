@@ -5,3 +5,20 @@
 5.move all x to end
 6.print all subsequence;]
 7.pring all permutations
+8.Check whether two strings are anagram of each other
+9.valid parenthesis
+10.print all duplicates
+11.print subsequence
+12.minimum edit distance
+13.longest palindromic subsequence
+14.wildcard string matching
+15.word wrap
+16. Longest Substring Without Repeating Characters
+17.longest palindromic substring
+18.palindrominc substring count
+19.Count All Palindromic Subsequence in a given String
+20.
+21.group anagram
+22.longest common prefix
+23.longest common prefix sufix (*)
+24.find the smallest window in a string containing all characters of another string (*)

@@ -1,10 +1,9 @@
 
 //inorder predecessor and succesor
-//  predecessor - largest in left
+//predecessor - largest in left
 //successor - smallest in right
 
 public class tree_prob15 {
-
   class Node {
     int data;
     Node left;
@@ -12,7 +11,6 @@ public class tree_prob15 {
 
     Node() {
     };
-
     Node(int data) {
       this.data = data;
       this.left = null;
@@ -49,7 +47,6 @@ public class tree_prob15 {
       suc = root;
       findPreSuc(root.left, key);
     }
-
     else {
       pre = root;
       findPreSuc(root.right, key);

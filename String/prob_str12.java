@@ -1,3 +1,4 @@
+//minimum edit distance
 public class prob_str12 {
   public int minEditDistance(String s1, String s2) {
     int t[][] = new int[s1.length() + 1][s2.length() + 1];

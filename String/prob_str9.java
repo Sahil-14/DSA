@@ -7,13 +7,10 @@ public class prob_str9 {
       char x = str.charAt(i);
       if (str.charAt(i) == '{' || str.charAt(i) == '[' || str.charAt(i) == '(') {
         s.push(str.charAt(i));
-
       }
-
       if (s.isEmpty()) {
         return false;
       }
-
       char chek;
       switch (x) {
         case '}':

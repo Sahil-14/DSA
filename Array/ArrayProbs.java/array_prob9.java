@@ -1,4 +1,4 @@
-
+//find minimum element in sorted and rotated array
 public class array_prob9 {
   public static int findMin(int arr[]) {
     if (arr.length == 0) {

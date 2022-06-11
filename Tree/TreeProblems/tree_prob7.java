@@ -1,11 +1,13 @@
 import java.util.*;
 
+//left view printing 
+//left view means , print the left element of each level
+
 public class tree_prob7 {
   class Node {
     int data;
     Node left;
     Node right;
-
     Node(int data) {
       this.data = data;
       this.left = null;
@@ -14,6 +16,7 @@ public class tree_prob7 {
   }
 
   
+
   public void leftview(Node root) {
     if (root == null) {
       return;

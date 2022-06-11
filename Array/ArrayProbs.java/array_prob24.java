@@ -1,4 +1,7 @@
+import java.io.Console;
 import java.util.*;
+
+//find sum query in specific range
 
 class Query {
   int L;
@@ -49,6 +52,7 @@ public class array_prob24 {
       // Remove elements of previous range. For example
       // when previous range is [0, 10] and current range
       // is [3, 8], then a[9] and a[10] are subtracted
+     //heare currR 
       while (currR > R + 1) {
         currSum -= a[currR - 1];
         currR--;

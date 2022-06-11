@@ -4,7 +4,6 @@ public class prob_str14 {
   public boolean isMatch(String s, String p) {
     char[] str = s.toCharArray();
     char[] pattern = p.toCharArray();
-
     int writeIndex = 0;
     boolean isFirst = true;
     for (int i = 0; i < pattern.length; i++) {

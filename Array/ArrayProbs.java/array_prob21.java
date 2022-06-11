@@ -56,6 +56,13 @@ public class array_prob21 {
     }
   }
 
+  public static String findLargestNumber(List<Integer> nums) {
+    // sort using a custom function object
+    Collections.sort(nums, (a, b) -> (String.valueOf(b) + a).compareTo(String.valueOf(a) + b));
+    return nums.stream()
+        .map(Object::toString)
+        .collect(Collectors.joining(""));
+  }
   // using int
   public static String largestNumber(List<Integer> arr) {
     // finding number of digits in maximum element

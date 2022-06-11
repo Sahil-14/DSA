@@ -17,7 +17,7 @@ class tree_prob3 {
 
   Node buildTree(int inorder[], int postOrder[], int start, int end) {
     if (start > end) {
-      return nulll;
+      return null;
     }
     Node node = Node(postOrder[postIndex--]);
 

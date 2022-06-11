@@ -1,3 +1,5 @@
+
+//replace data of node equal to sum of leftsubtree and right subtree
 public class tree_prob8 {
 
   class Node {
@@ -16,7 +18,6 @@ public class tree_prob8 {
     if (root == null) {
       return;
     }
-
     sumReplace(root.left);
     sumReplace(root.right);
     if (root.left != null) {

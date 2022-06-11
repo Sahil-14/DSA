@@ -1,3 +1,5 @@
+//palindrominc substring count
+
 public class prob_str18 {
   public static int palindromicSubstringCount(String str) {
     int n = str.length();
@@ -11,13 +13,17 @@ public class prob_str18 {
       count++;
     }
 
-    for (int l = 2; l <= n; l++) {
+    for (int i = 0; i < n - 1; i++) {
+      if (str.charAt(i) == str.charAt(i + 1)) {
+        count++;
+        t[i][i + 1] = true;
+      }
+    }
+
+    for (int l = 3; l <= n; l++) {
       for (int i = 0; i <= n - l; i++) {
         int j = i + l - 1;
-        if (l == 2 && str.charAt(i) == str.charAt(j)) {
-          t[i][j] = true;
-          count++;
-        } else if (t[i + 1][j - 1] && str.charAt(i) == str.charAt(j)) {
+        if (t[i + 1][j - 1] && str.charAt(i) == str.charAt(j)) {
           t[i][j] = true;
           count++;
         }
@@ -29,7 +35,7 @@ public class prob_str18 {
   public static void main(String[] args) {
 
     String Str = "abbaeae";
-    System.out.println(palindromicSubsequeceCount(Str));
+    System.out.println(palindromicSubstringCount(Str));
 
   }
 }

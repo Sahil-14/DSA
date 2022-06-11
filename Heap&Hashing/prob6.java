@@ -41,7 +41,6 @@ public class prob6 {
       }
       q.addLast(i);
     }
-
     for (; i < n; ++i) {
       // The element at the front of the
       // queue is the largest element of

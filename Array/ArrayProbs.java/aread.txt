@@ -1,0 +1,27 @@
+1.min max in array
+2. reverse the array
+3.Largest Sum Contiguous Subarray (kadanes)
+4. find duplicates and find duplicates withim k distance
+5.Chocolate Distribution Problem (distribute n Chocolate amongs m student)
+6.search in sorted and rotated array
+7.next permutation
+8.find repeting and missing element
+9.find min element in sorted and rotated array
+10.stock busy sell to maximum profit
+11.kh smallest and largest
+12.trapping rainwater
+13.max product subarray
+14.check whether sum pair exist in sorted rotated array
+15. Container With Most Water
+16.product of array expect itself
+17.
+18.merge intervales
+19.no of merge operations to make array palindrome
+20.
+21.Arrange given numbers to form the biggest number
+22.
+23.Print all possible combinations of r elements in a given array of size n
+24.find sum query in specific range(h)
+25.longest subarray with sum divisible by k
+26.next greater
+27.next smaller

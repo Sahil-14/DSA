@@ -39,7 +39,6 @@ public class prob_str24 {
           m[s[i]]++;
           if (m[s[i]] > 0)
             count++;
-
           i++;
         }
       }

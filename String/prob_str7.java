@@ -1,7 +1,7 @@
 public class prob_str7 {
   public static void permutation(String s, String ans) {
     if (s.length() == 0) {
-      // System.out.println(ans);
+      System.out.println(ans);
       return;
     }
     if (s.length() == 0) {

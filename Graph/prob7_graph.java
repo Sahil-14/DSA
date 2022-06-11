@@ -32,7 +32,7 @@ public class prob7_graph {
     for (int i = 0; i < V; i++) {
       key[i] = Integer.MAX_VALUE;
       mstSet[i] = false;
-    }
+    } 
 
     // Always include first 1st vertex in MST.
     key[0] = 0; // Make key 0 so that this vertex is
@@ -43,7 +43,6 @@ public class prob7_graph {
       // Pick thd minimum key vertex from the set of vertices
       // not yet included in MST
       int u = findMinkey(key, mstSet);
-
       mstSet[u] = true;
       // Update key value and parent index of the adjacent
       // vertices of the picked vertex. Consider only those

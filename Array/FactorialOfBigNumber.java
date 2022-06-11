@@ -43,7 +43,6 @@ public class FactorialOfBigNumber {
     // and returns the new value of res_size
     static int multiply(int x, int res[], int res_size) {
         int carry = 0; // Initialize carry
-
         // One by one multiply n with individual
         // digits of res[]
         for (int i = 0; i < res_size; i++) {

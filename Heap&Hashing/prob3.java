@@ -33,6 +33,7 @@ public class prob3 {
         heap1.remove();
       }
     }
+    
     return heap1.peek();
 
   }

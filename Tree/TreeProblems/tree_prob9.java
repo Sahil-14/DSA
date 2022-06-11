@@ -1,3 +1,6 @@
+//check if the tree is height balanced or not
+//a tree is height balance if the at each node difference bet height of leftsubtree
+//and right subtree is less than or equal to 1
 
 class Height {
   int height = 0;

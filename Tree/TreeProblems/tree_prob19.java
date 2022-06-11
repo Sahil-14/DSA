@@ -1,5 +1,5 @@
 import java.util.Stack;
-
+//zigzag traversal
 public class tree_prob19 {
   class Node {
     int data;
