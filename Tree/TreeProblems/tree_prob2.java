@@ -21,7 +21,7 @@ public class tree_prob2 {
       return null;
     }
 
-    Node node = new Node(preorder[preIndex++]);
+    Node node = new Node(preorder[preIndex]++);
     if (start == end) {
       return node;
     }

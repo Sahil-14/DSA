@@ -36,7 +36,7 @@ public class SQ11 {
     int result = 0;
     Stack<Integer> s = new Stack<>();
 
-    for (int i = 1; i <= 9; i++) {
+    for (int i = 0; i <= 9; i++) {
       if (i <= n) {
         s.push(i);
         result++;
@@ -63,7 +63,7 @@ public class SQ11 {
 
   // Driven Code
   public static void main(String[] args) {
-    int n = 15;
+    int n = 2;
     System.out.println(countNumber(n));
   }
 }
