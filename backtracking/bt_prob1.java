@@ -1,3 +1,18 @@
+/**
+ * 
+ * issafe
+ * 
+ * try solusion 
+ * if current solution is safe mark 1
+ * try all recursive path 
+ *if they return false
+ unmark current
+ 
+ * 
+ * 
+ * 
+ */
+
 public class bt_prob1 {
   public static boolean isSafe(int arr[][], int x, int y, int n) {
     return x < n && y < n && arr[x][y] == 1;
@@ -6,6 +21,7 @@ public class bt_prob1 {
   public static boolean ratInMaze(int arr[][], int x, int y, int n, int sol[][]) {
     // base case
     if (x == n - 1 && y == n - 1) {
+      sol[x][y] = 1;
       return true;
     }
 

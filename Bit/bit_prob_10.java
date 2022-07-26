@@ -17,6 +17,7 @@ public class bit_prob_10 {
     if (n == 0) {
       return 0;
     }
+    
     if (n < 0) {
       n = -n;
     }

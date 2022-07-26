@@ -19,6 +19,5 @@ public class prob_str13 {
       }
     }
     return temp[0][str.length() - 1];
-
   }
 }

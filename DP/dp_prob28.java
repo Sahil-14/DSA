@@ -36,13 +36,16 @@ class Dimension implements Comparable<Dimension> {
     int height;
     int length;
     int width;
+
     Dimension(int height, int length, int width) {
         this.height = height;
         this.length = length;
         this.width = width;
     }
+
     Dimension() {
     }
+
     static Dimension CreateDimetion(int height, int side1, int side2) {
         Dimension d = new Dimension();
         d.height = height;
@@ -74,10 +77,17 @@ class Dimension implements Comparable<Dimension> {
 
 public class dp_prob28 {
     public int maxHeight(Dimension[] input) {
+        // get all rotations of box dimension.
+        // e.g if dimension is 1,2,3 rotations will be 2,1,3 3,2,1 3,1,2 . Here length
+        // is always greater
+        // or equal to width and we can do that without loss of generality.
         Dimension[] allRotationInput = new Dimension[input.length * 3];
         createAllRotation(input, allRotationInput);
+
+        // sort these boxes in non increasing order by their base area.(length X width)
         Arrays.sort(allRotationInput);
 
+        // apply longest increasing subsequence kind of algorithm on these sorted boxes.
         int T[] = new int[allRotationInput.length];
         int result[] = new int[allRotationInput.length];
 
@@ -85,37 +95,29 @@ public class dp_prob28 {
             T[i] = allRotationInput[i].height;
             result[i] = i;
         }
-        
-        for (int i = 1; i < allRotationInput.length; i++) {
-            for (int j = 0; j < allRotationInput.length; j++) {
+
+        for (int i = 1; i < T.length; i++) {
+            for (int j = 0; j < i; j++) {
                 if (allRotationInput[i].length < allRotationInput[j].length
                         && allRotationInput[i].width < allRotationInput[j].width) {
-                    T[i] = T[j] + allRotationInput[i].height;
-                    result[i] = j;
+                    if (T[j] + allRotationInput[i].height > T[i]) {
+                        T[i] = T[j] + allRotationInput[i].height;
+                        result[i] = j;
+                    }
                 }
             }
         }
 
-        int maxVal = Integer.MIN_VALUE;
-        int maxIndex = 0;
-
-        for (int i = 0; i < allRotationInput.length; i++) {
-            if (T[i] > maxVal) {
-                maxVal = T[i];
-                maxIndex = i;
+        // find max in T[] and that will be our max height.
+        // Result can also be found using result[] array.
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < T.length; i++) {
+            if (T[i] > max) {
+                max = T[i];
             }
         }
 
-        int t = maxIndex;
-        int newT = maxIndex;
-        do {
-            newT = t;
-            System.out.println(
-                    allRotationInput[t].length + " " + allRotationInput[t].width + " " + allRotationInput[t].height);
-            t = result[newT];
-        } while (t != newT);
-
-        return maxVal;
+        return max;
     }
 
     // create all rotations of boxes, always keeping length greater or equal to

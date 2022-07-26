@@ -56,7 +56,7 @@ public class prob3_grdy {
       }
     }
 
-    return num2 + num1;
+    return n2 + n1;
 
   }
 

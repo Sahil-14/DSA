@@ -1,6 +1,10 @@
 /**
  * Number of Triangles in Directed and Undirected Graphs
  * 
+ * Let A[][] be the adjacency matrix representation of the graph. If we
+ * calculate A3, then the number of triangles in Undirected Graph is equal to
+ * trace(A3) / 6. Where trace(A) is the sum of the elements on the main diagonal
+ * of matrix A.
  * 
  * 
  */

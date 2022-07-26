@@ -73,6 +73,24 @@ public class prob27 {
    * Time Complexity = O(n * m)
    * Space Complexity = O(n * m)
    * 
+   * 
+   * 
+   * Approach: The idea is to use multisource Breadth-First Search. Consider each
+   * cell as a node and each boundary between any two adjacent cells be an edge.
+   * Number each cell from 1 to N*M. Now, push all the node whose corresponding
+   * cell value is 1 in the matrix in the queue. Apply BFS using this queue to
+   * find the minimum distance of the adjacent node.
+   * Algorithm:
+   * Create a graph with values assigned from 1 to M*N to all vertices. The
+   * purpose is to store position and adjacent information.
+   * Create an empty queue.
+   * Traverse all matrix elements and insert positions of all 1s in queue.
+   * Now do a BFS traversal of graph using above created queue.
+   * Run a loop till the size of the queue is greater than 0 then extract the
+   * front node of the queue and remove it and insert all its adjacent and
+   * unmarked elements. Update the minimum distance as distance of current node +1
+   * and insert the element in the queue.
+   * 
    */
   static class Coordinate {
     int row;

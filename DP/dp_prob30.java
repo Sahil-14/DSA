@@ -11,10 +11,13 @@ public class dp_prob30 {
         return inclusive;
     }
 
+    
+
     public static void main(String[] args) {
         dp_prob30 ob = new dp_prob30();
         // int arr[] = { 2, 10, 13, 4, 2, 15, 10 };
-        int arr[] = { 4, 1, 1, 4, 2, 1 };
+        int arr[] = { 5, 5, 10, 100,
+                10, 5 };
         System.out.println(ob.maxSum(arr));
 
     }

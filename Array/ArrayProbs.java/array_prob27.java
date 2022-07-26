@@ -2,6 +2,8 @@
 import java.util.HashMap;
 import java.util.Stack;
 
+import NextGreater.stack;
+
 public class array_prob27 {
   public static void nextSmaller(int arr[], int n) {
     int i = 0;
@@ -43,6 +45,7 @@ public class array_prob27 {
     }
   }
 
+  
   public static void main(String[] args) {
     int arr[] = { 11, 13, 21, 3 };
     int n = arr.length;

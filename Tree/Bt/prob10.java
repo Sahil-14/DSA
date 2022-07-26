@@ -10,13 +10,17 @@ public class prob10 {
       height.height = 0;
       return true;
     }
-    Height leftHeight = new Height(), rightHeight = new Height();
-    boolean l = isBalanced(root.left, leftHeight);
-    boolean r = isBalanced(root.right, rightHeight);
-    int lHeight = leftHeight.height;
-    int rHeight = rightHeight.height;
-    height.height = Math.abs(lHeight - rHeight);
-    if (Math.abs(lHeight - rHeight) >= 2) {
+
+    Height lHeight = new Height(), rHeight = new Height();
+    boolean l = isBalanced2(root.left, lHeight);
+    boolean r = isBalanced2(root.right, rHeight);
+
+    int lh = lHeight.height;
+    int rh = lHeight.height;
+
+    height.height = Math.max(lh, rh) + 1;
+
+    if (Math.abs(lh - rh) >= 2) {
       return false;
     } else {
       return l && r;

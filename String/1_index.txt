@@ -13,11 +13,14 @@
 13.longest palindromic subsequence
 14.wildcard string matching
 15.word wrap
-16. Longest Substring Without Repeating Characters
+16. Longest Substring Without Repeating Characters **
 17.longest palindromic substring
 18.palindrominc substring count
 19.Count All Palindromic Subsequence in a given String
-20.
+20. Given a string that consists of only uppercase English letters, you can
+   replace any letter in the string with another letter at most k times. Find
+   the length of a longest substring containing all repeating letters you can
+   get after performing the above operations.  (***)
 21.group anagram
 22.longest common prefix
 23.longest common prefix sufix (*)

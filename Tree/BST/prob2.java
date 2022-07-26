@@ -78,7 +78,6 @@ public class prob2 {
     } else {
       return search(root.right, key);
     }
-
   }
 
   public static void main(String[] args) {

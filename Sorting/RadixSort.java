@@ -16,14 +16,11 @@ public class RadixSort {
         for (int i = 1; i < 10; i++) {
             count[i] = count[i] + count[i - 1];
         }
-
         int[] output = new int[arr.length];
         System.out.println(output.length);
         for (int i = arr.length - 1; i >= 0; --i) {
-
             output[--count[(arr[i] / exp) % 10]] = arr[i];
         }
-
         for (int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
         }

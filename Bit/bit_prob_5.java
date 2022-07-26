@@ -11,8 +11,8 @@ public class bit_prob_5 {
     if (!isPowerOf2(n)) {
       return -1;
     }
-    unsigned count = 0;
-    while (n) {
+    int count = 0;
+    while (n != 0) {
       n = n >> 1;
       ++count;
     }
@@ -26,12 +26,14 @@ public class bit_prob_5 {
   }
 
   static int findPosition2(int n) {
-    if (!isPowerOfTwo(n))
+    if (!isPowerOf2(n))
       return -1;
     return Log2n(n) + 1;
   }
 
   public static void main(String[] args) {
     System.out.println(findPosition(16));
+    System.out.println(findPosition2(16));
+
   }
 }

@@ -1,6 +1,8 @@
 import prob53.Node;
 
 /**
+ * 
+ * 
  * Check if all leaves are at same level
  * 12
  * / \
@@ -51,7 +53,7 @@ public class prob9 {
 
     return checkUtil(node.left, level + 1, leafLevel) && (checkUtil(node.right, level + 1, leafLevel));
   }
-
+  
   boolean check(Node node) {
     int level = 0;
     return checkUtil(node, level, mylevel);

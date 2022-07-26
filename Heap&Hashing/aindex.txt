@@ -2,14 +2,15 @@
 2.Top k most frequent elements
 3.Kth smallest and largest
 4.Find the maximum repeating number in O(n) time and O(1) extra space
-5.to find maximum length of sub array having sum 0
+5.to find maximum length of sub array having sum 0  **
 6.Sliding Window Maximum (Maximum of all subarrays of size k)
-7.Sum of minimum and maximum elements of all subarrays of size k.
+7.Sum of minimum and maximum elements of all subarrays of size k.  **
 8.K’th largest element in a stream
 9.Count distinct elements in every window of size k
 10.Find Recurring Sequence in a Fraction
-11.Length of the largest subarray with contiguous elements
-12.Find Itinerary from a given list of tickets
+11.Length of the largest subarray with contiguous elements   (**)
+12.Find Itinerary from a given list of tickets  
 13.Subarrays with distinct elements(*)
 14.majority element 
+15.find k-th smallest number in the remaining set of natural numbers.
 

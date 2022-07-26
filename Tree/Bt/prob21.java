@@ -1,6 +1,6 @@
 /**
  * lowest common ansector
- * 
+ * and distance between 2 nodesd
  */
 
 public class prob21 {
@@ -17,30 +17,22 @@ public class prob21 {
   }
 
   public Node lca(Node root, int n1, int n2) {
-    if (root == null) {
-      return null;
-    }
-
-    if (root.data == n1 || root.data == n2) {
+    if (root == null)
       return root;
-    }
+    if (root.data == n1 || root.data == n2)
+      return root;
+
     Node left = lca(root.left, n1, n2);
     Node right = lca(root.right, n1, n2);
 
-    if (left != null && right != null) {
+    if (left != null && right != null)
       return root;
-    }
-
-    if (left == null || right == null) {
+    if (left == null && right == null)
       return null;
-    }
-
-    if (left != null) {
+    if (left != null)
       return lca(root.left, n1, n2);
-    }
-
-    return lca(root.right, n1, n2);
-
+    else
+      return lca(root.right, n1, n2);
   }
 
   int findDist(Node root, int k, int dist) {
@@ -52,16 +44,17 @@ public class prob21 {
       return dist;
     }
     int left = findDist(root.left, k, dist + 1);
-    if (left != -1) {
-      return left;
+    if (left == -1) {
+      return findDist(root.right, k, dist + 1);
     }
-    return findDist(root.right, k, dist + 1);
+    return left;
+
   }
 
   int distanceBetNode(Node root, int n1, int n2) {
     Node lca = lca(root, n1, n2);
-    int d1 = findDist(root, n1, 0);
-    int d2 = findDist(root, n2, 0);
+    int d1 = findDist(lca, n1, 0);
+    int d2 = findDist(lca, n2, 0);
     return d1 + d2;
   }
 

@@ -52,7 +52,7 @@ public class array_prob24 {
       // Remove elements of previous range. For example
       // when previous range is [0, 10] and current range
       // is [3, 8], then a[9] and a[10] are subtracted
-     //heare currR 
+      // heare currR
       while (currR > R + 1) {
         currSum -= a[currR - 1];
         currR--;
@@ -60,6 +60,34 @@ public class array_prob24 {
       // Print sum of current range
       System.out.println("Sum of [" + L +
           ", " + R + "] is " + currSum);
+    }
+  }
+
+  // method 2:
+  public static void rangeSum(ArrayList<Query> arr, int[] a) {
+    int n = a.length;
+    int[] prefix = new int[n];
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+      sum += a[i];
+      prefix[i] = sum;
+    }
+
+    for (int i = 0; i < arr.size(); i++) {
+      Query current = arr.get(i);
+      int l = current.L;
+      int r = current.R;
+
+      if (l < 0 || r >= n) {
+        System.out.println("Sum or range [" + l + " " + r + " is " + 0);
+      }
+      if (l == 0) {
+        System.out.println("Sum or range [" + l + " " + r + " is " + prefix[r]);
+      } else if (l > 0) {
+        int temp = prefix[r] - prefix[l - 1];
+        System.out.println("Sum or range [" + l + " " + r + " is " + temp);
+      }
+
     }
   }
 
@@ -71,5 +99,6 @@ public class array_prob24 {
 
     int a[] = { 1, 1, 2, 1, 3, 4, 5, 2, 8 };
     queryResults(a, a.length, q, q.size());
+    // rangeSum(q, a);
   }
 }

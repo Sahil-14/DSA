@@ -45,6 +45,10 @@ public class array_prob19 {
         ans++;
       }
     }
+
+    for (int i : arr) {
+      System.out.print(i + " ");
+    }
     return ans;
 
   }

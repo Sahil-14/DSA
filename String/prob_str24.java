@@ -3,7 +3,6 @@
 public class prob_str24 {
   static String Minimum_Window(char[] s, char[] t) {
     int m[] = new int[256];
-
     int ans = Integer.MAX_VALUE;
     int start = 0;
     int count = 0;
@@ -13,7 +12,6 @@ public class prob_str24 {
       }
       m[t[i]]++;
     }
-
     int i = 0;
     int j = 0;
 

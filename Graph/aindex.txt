@@ -2,3 +2,32 @@
 2.bfs
 3.dfs
 4.topological sort
+5.cycle detection in undirected graph
+6.cycle detection indirected graph
+7.prims mst algo
+8.dijkstras shortest path algo (use prims mst algo)
+9.Disjoin set (find cycle in undirected graph) || find-union
+10.Floyd Warshall Algorithm (shortest path algo) find intermediate node
+11. Bellman–Ford Algorithm (shortest path alog) usefull for negative weight edges (- cycle detection)
+12.check whether negative weighted cycle present in graph or not
+13.Flood fill Algorithm 
+14.Number of Triangles in Directed and Undirected Graphs
+15.clone graph (BFS) *
+16.m-coloring problem (backtracking)
+17.snake and ladder (bfs) *
+18. Minimize count of connections required to be rearranged to make all the
+ computers connected (dfs)
+19.print all connected components  (dfs)
+20. count number of islands (dfs) (with safe function)
+21. Minimum steps to reach target by a Knight (BFS)
+22.
+23.check whether graph is biphartete or not
+24.hamiltolian cycle (backtracking)
+25
+26
+27.  Distance of nearest cell having 1 in a binary matrix
+28.roten oranges
+29.  Minimum time taken by each job to be completed given by a Directed Acyclic
+30. **
+
+

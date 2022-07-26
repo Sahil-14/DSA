@@ -704,7 +704,6 @@ Node deleteNode(Node head,int key){
 
 24. multiply 2 no represented by list
 
-
   static long multiplyTwoList(Node first, Node second) {
     long N = 1000000007;
     long num1 = 0, num2 = 0;
@@ -729,7 +728,6 @@ Node deleteNode(Node head,int key){
       slow_ptr = slow_ptr.next;
       fast_ptr = fast_ptr.next.next;
     }
-
     Node node1 = node;
     Node node2 = slow_ptr.next;
     slow_ptr.next = null;
@@ -916,8 +914,6 @@ Delete nodes which have a greater value on right side
   }
 
   29.Sort the biotonic doubly linked list
-
-
 
     // Function to reverse a Doubly Linked List
   static Node reverse(Node head_ref) {

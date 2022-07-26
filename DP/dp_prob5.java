@@ -16,7 +16,7 @@ public class dp_prob5 {
                     if (T[i] > 1 + T[i - coins[j]]) {
                         T[i] = 1 + T[i - coins[j]];
                         R[i] = j;
-                    }
+                    
                 }
             }
         }
@@ -53,4 +53,4 @@ public class dp_prob5 {
 
 /// as problem is of minimization type initialize first row by +infinity
 /// when we have take minimum value of previous iteration and current calculated
-/// value we can use space efficient solution
+/// value we can use space efficient solutio

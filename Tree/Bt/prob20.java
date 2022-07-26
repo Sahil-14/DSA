@@ -1,5 +1,10 @@
 import java.util.*;
+//check if graph is tree of not
+//graph is treee if it contains 
+// An undirected graph is tree if it has following properties. 
 
+// There is no cycle. 
+// The graph is connected.
 public class prob20 {
   private int V; // No. of vertices
   private LinkedList<Integer> adj[]; // Adjacency List

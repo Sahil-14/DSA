@@ -22,10 +22,31 @@ public class prob16 {
         .collect(Collectors.toList());
   }
 
+  public static void findKClosestElements2(int[] nums, int k, int target) {
+    HashMap<Integer, Integer> hm = new HashMap<>();
+    for (int num : nums) {
+      if (!hm.containsKey(num)) {
+        hm.put(num, Math.abs(target - num));
+      }
+    }
+    PriorityQueue<Integer> q = new PriorityQueue<>((n1, n2) -> hm.get(n2) - hm.get(n1));
+
+    for (int key : hm.keySet()) {
+      q.add(key);
+      if (q.size() > k) {
+        q.poll();
+      }
+    }
+
+    for (int val : q) {
+      System.out.println(val);
+    }
+  }
+
   public static void main(String[] args) {
     int[] nums = { 10, 12, 15, 17, 18, 20, 25 };
     int target = 16, k = 4;
 
-    System.out.println(findKClosestElements(nums, k, target));
+    findKClosestElements2(nums, k, target);
   }
 }

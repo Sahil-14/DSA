@@ -66,8 +66,8 @@ public class dp_prob16 {
 
     public static void main(String[] args) {
         dp_prob16 cc = new dp_prob16();
-        int total = 15;
-        int coins[] = { 3, 4, 6, 7, 9 };
+        int total = 10;
+        int coins[] = { 2, 5, 3, 6 };
         System.out.println(cc.numberOfSolutions(total, coins));
         System.out.println(cc.numberOfSolutionsSpace(total, coins));
     }

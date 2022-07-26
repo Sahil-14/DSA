@@ -1,6 +1,6 @@
 /**
  * 12->15->10->11->5->6->2->3->NULL
- * 
+ * 11-10-15-12
  * 15->11->6->3->NULL
  * 
  */
@@ -65,7 +65,6 @@ public class DeleteNodeOnRight {
       }
     }
   }
-
 
   void printList() {
     Node temp = head;

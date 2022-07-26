@@ -16,7 +16,6 @@ public class prob6 {
     // Number of object in current
     // level.
     int curr_count = 0;
-
     // Width of current level.
     int curr_width = 0;
     for (int i = 1; i < n; i++) {
@@ -37,13 +36,11 @@ public class prob6 {
         // previous level.
         prev_width = curr_width;
         prev_count = curr_count;
-
         // Reset width of current
         // level, number of object
         // on current level.
         curr_count = 0;
         curr_width = 0;
-
         // Increment number of
         // level.
         ans++;

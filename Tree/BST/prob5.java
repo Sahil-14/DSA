@@ -67,7 +67,6 @@ public class prob5 {
     Arrays.sort(arr);
     index = 0;
     arrayToBST(arr, root);
-
   }
 
   static Node newNode(int data) {

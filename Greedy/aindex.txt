@@ -1,0 +1,36 @@
+1. You are given n activities with their start and finish times. Select the
+ * maximum number of activities that can be performed by a single person,
+ * assuming that a person can only work on a single activity at a time.
+ * 
+
+2. minimum number of coins and/or notes needed to make  the change?
+
+3.Given an array of digits (values are from 0 to 9), find the minimum possible
+  sum of two numbers formed from digits of the array. All digits of given array
+  must be used to form the two numbers.
+
+4.Minimum sum of absolute difference of pairs of two arrays
+
+5. You are given a list of N coins of different denominations. You can pay an
+   amount equivalent to any 1 coin and can acquire that coin. In addition, once
+   you have paid for a coin, we can choose at most K more coins and can acquire
+   those for free. The task is to find the minimum amount required to acquire
+   all the N coins for a given value of K.
+
+6 .max pyramid length **
+7.find maximum equal sum of every 3 stacks
+8.Given an array of jobs where every job has a deadline and associated profit  **
+9.Egyptian Fraction   **
+10. fractional knapsak
+11.Find smallest number with given number of digits and sum of digits
+12. Maximum Length Chain of Pairs
+13.Maximize sum of consecutive differences in a circular array   **
+14 .Given a paper of size, A x B. Task is to cut the paper into squares of any
+    size. Find the minimum number of squares that can be cut from the paper.
+15.Lexicographically smallest array after at-most K consecutive swaps
+16.Rearrange characters in a string such that no two adjacent are same  ***
+17.Minimum Cost to cut a board into squares
+
+
+
+   

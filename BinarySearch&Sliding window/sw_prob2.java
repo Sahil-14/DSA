@@ -14,9 +14,9 @@ public class sw_prob2 {
       }
       while (sum > x && start < n) {
         if (end - start > maxlen) {
-          maxlen = end - start;
+          maxlen = end - start ;
         }
-        sum += arr[start++];
+        sum -= arr[start++];
       }
     }
   }

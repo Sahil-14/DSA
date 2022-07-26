@@ -12,7 +12,7 @@ public class QuickSort {
     // public int split(int arr[], int low, int high) {
     // int pivot = low;
     // int i = low + 1;
-    // int j = high;
+    // int j = high;0
     // while (i > j) {
     // while (i <= j && arr[pivot] >= arr[i]) {
     // i++;

@@ -12,7 +12,8 @@ public class array_prob9 {
     int left = 0, right = arr.length - 1;
     if (arr[left] < arr[right]) {
       return arr[0];
-    }
+    };
+    
 
     while (right >= left) {
       int mid = left + (right - left) / 2;

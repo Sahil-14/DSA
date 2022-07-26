@@ -6,6 +6,8 @@ public class prob23_graph {
   static class Pair {
     int first, second;
 
+    // first -vertex
+    // second - color
     Pair(int f, int s) {
       first = f;
       second = s;

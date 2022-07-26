@@ -18,5 +18,33 @@ public class prob9 {
     return nums.get(k - 1);
   }
 
-  //
+  void MorrisTraversal(tNode root, int k) {
+    tNode current = root;
+    int count = 0;
+    Node kthSmallest, pre;
+    while (current != null) {
+      if (current.left == null) {
+        if (++count == k) {
+          kthSmallest = current;
+        }
+        current = current.right;
+      } else {
+        pre = current.left;
+        while (pre != null || pre.right != null) {
+          pre = pre.right;
+        }
+        if (pre.right != null) {
+          pre.right = current;
+          current = current.left;
+        } else {
+          pre.right = null;
+          if (++count == k) {
+            kthSmallest = current;
+          }
+          current = current.right;
+        }
+      }
+    }
+
+  }
 }

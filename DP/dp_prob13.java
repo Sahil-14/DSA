@@ -1,4 +1,3 @@
-//number of jump needed to reach the end
 /**
  * 
  * *
@@ -18,42 +17,39 @@
  */
 
 public class dp_prob13 {
-    public int minJump(int arr[], int result[]) {
-        int n = arr.length;
-        int jump[] = new int[arr.length];
-        jump[0] = 0;
-        if (n == 0 || arr[0] <= 0) {
-            return Integer.MAX_VALUE;
-        }
-        
+    private static int minJumps(int[] arr, int n) {
+        // jumps[n-1] will hold the
+        int jumps[] = new int[n];
+        // result
+        int i, j;
 
-        for (int i = 1; i < arr.length; i++) {
-            jump[i] = Integer.MAX_VALUE;
-            for (int j = 0; j < i; j++) {
-                if (j + arr[j] >= i && jump[j] != Integer.MAX_VALUE){
-                    jump[i] = Math.min(jump[i],jump[j] + 1);
-                    result[i] = j;
+        // if first element is 0,
+        if (n == 0 || arr[0] == 0)
+            return Integer.MAX_VALUE;
+        // end cannot be reached
+
+        jumps[0] = 0;
+
+        // Find the minimum number of jumps to reach arr[i]
+        // from arr[0], and assign this value to jumps[i]
+        for (i = 1; i < n; i++) {
+            jumps[i] = Integer.MAX_VALUE;
+            for (j = 0; j < i; j++) {
+                if (i <= j + arr[j]
+                        && jumps[j] != Integer.MAX_VALUE) {
+                    jumps[i] = Math.min(jumps[i], jumps[j] + 1);
                     break;
                 }
             }
-        } 
-        // print path
-        System.out.print(result[0]);
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (result[i + 1] != result[i]) {
-                System.out.print(" - " + result[i + 1]);
-            }
         }
-        System.out.print(" - " + (arr.length - 1));
-        System.out.println();
-        return jump[jump.length - 1];
+        return jumps[n - 1];
     }
 
-  
     static int minJumps(int arr[]) {
         if (arr.length <= 1)
             return 0;
-
+        if (n == 1)
+            return 0;
         // Return -1 if not possible to jump
         if (arr[0] == 0)
             return -1;
@@ -103,3 +99,20 @@ public class dp_prob13 {
     }
 
 }
+
+/**
+ * 
+ * public class Solution {
+ * public int canJump(int[] nums) {
+ * int lastPos = nums.length - 1;
+ * for (int i = nums.length - 1; i >= 0; i--) {
+ * if (i + nums[i] >= lastPos) {
+ * lastPos = i;
+ * }
+ * }
+ * return (lastPos == 0) ? 1 : 0;
+ * }
+ * 
+ * }
+ * 
+ */

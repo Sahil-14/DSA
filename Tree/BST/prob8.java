@@ -79,6 +79,6 @@ public class prob8 {
     root.right.right = newNode(10);
 
     System.out.println("Finding K-th largest Node in BST : " +
-        KthLargestUsingMorrisTraversal(root, 2).data);
+        KthLargestUsingMorrisTraversal(root, 1).data);
   }
 }

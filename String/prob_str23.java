@@ -48,7 +48,7 @@ public class prob_str23 {
         // and i = 7. The idea is
         // similar to search step.
         if (len != 0) {
-          len = lps[len - 1];
+          len = lps[len - 1]; 
 
           // Also, note that we do
           // not increment i here

@@ -16,22 +16,22 @@
 import java.util.*;
 
 public class dp_prob40 {
-  public int maxProfit(int prices[], int k) {
-    if (k == 0 || prices.length == 0) {
-      return 0;
-    }
-    int T[][] = new int[k + 1][prices.length];
+  // public int maxProfit(int prices[], int k) {
+  // if (k == 0 || prices.length == 0) {
+  // return 0;
+  // }
+  // int T[][] = new int[k + 1][prices.length];
 
-    for (int i = 1; i < T.length; i++) {
-      int maxDiff = -prices[0];
-      for (int j = 1; j < T[0].length; j++) {
-        T[i][j] = Math.max(T[i][j - 1], prices[j] + maxDiff);
-        maxDiff = Math.max(maxDiff, T[i - 1][j] - prices[j]);
-      }
-    }
-    // printActualSolution(T, prices);
-    return T[k][prices.length - 1];
-  }
+  // for (int i = 1; i < T.length; i++) {
+  // int maxDiff = -prices[0];
+  // for (int j = 1; j < T[0].length; j++) {
+  // T[i][j] = Math.max(T[i][j - 1], prices[j] + maxDiff);
+  // maxDiff = Math.max(maxDiff, T[i - 1][j] - prices[j]);
+  // }
+  // }
+  // // printActualSolution(T, prices);
+  // return T[k][prices.length - 1];
+  // }
 
   /**
    * This is slow method but easier to understand.
@@ -39,38 +39,38 @@ public class dp_prob40 {
    * T[i][j] = max(T[i][j-1], max(prices[j] - prices[m] + T[i-1][m])) where m is
    * 0...j-1
    */
-  public int maxProfitSlowSolution(int prices[], int K) {
-    if (K == 0 || prices.length == 0) {
-      return 0;
-    }
-    int T[][] = new int[K + 1][prices.length];
+  // public int maxProfitSlowSolution(int prices[], int K) {
+  // if (K == 0 || prices.length == 0) {
+  // return 0;
+  // }
+  // int T[][] = new int[K + 1][prices.length];
 
-    for (int i = 1; i < T.length; i++) {
-      for (int j = 1; j < T[0].length; j++) {
-        int maxVal = 0;
-        for (int m = 0; m < j; m++) {
-          maxVal = Math.max(maxVal, prices[j] - prices[m] + T[i - 1][m]);
-        }
-        T[i][j] = Math.max(T[i][j - 1], maxVal);
-      }
-    }
-    printActualSolution(T, prices);
-    return T[K][prices.length - 1];
-  }
+  // for (int i = 1; i < T.length; i++) {
+  // for (int j = 1; j < T[0].length; j++) {
+  // int maxVal = 0;
+  // for (int m = 0; m < j; m++) {
+  // maxVal = Math.max(maxVal, prices[j] - prices[m] + T[i - 1][m]);
+  // }
+  // T[i][j] = Math.max(T[i][j - 1], maxVal);
+  // }
+  // }
+  // printActualSolution(T, prices);
+  // return T[K][prices.length - 1];
+  // }
 
-  static int maxProfitt(int prices[], int size) {
+  // static int maxProfitt(int prices[], int size) {
 
-    // maxProfit adds up the difference between
-    // adjacent elements if they are in increasing order
-    int maxProfit = 0;
+  // // maxProfit adds up the difference between
+  // // adjacent elements if they are in increasing order
+  // int maxProfit = 0;
 
-    // The loop starts from 1
-    // as its comparing with the previous
-    for (int i = 1; i < size; i++)
-      if (prices[i] > prices[i - 1])
-        maxProfit += prices[i] - prices[i - 1];
-    return maxProfit;
-  }
+  // // The loop starts from 1
+  // // as its comparing with the previous
+  // for (int i = 1; i < size; i++)
+  // if (prices[i] > prices[i - 1])
+  // maxProfit += prices[i] - prices[i - 1];
+  // return maxProfit;
+  // }
 
   // use this
   static int maxProfit(int price[],
@@ -80,7 +80,7 @@ public class dp_prob40 {
     // profit[t][i] stores maximum profit
     // using atmost t transactions up to day
     // i (including day i)
-    int profit[][] = new int[k + 1][n + 1];
+    int profit[][] = new int[k + 1][n + 1];// we can set it n only
 
     // For day 0, you can't earn money
     // irrespective of how many times you trade
@@ -89,7 +89,7 @@ public class dp_prob40 {
 
     // profit is 0 if we don't do any
     // transaction (i.e. k =0)
-    for (int j = 0; j <= n; j++)
+    for (int j = 0; j <= n; j++) // if int profit[][] = new int[k + 1][n]; then j < n
       profit[0][j] = 0;
 
     // fill the table in bottom-up fashion
@@ -141,9 +141,14 @@ public class dp_prob40 {
 
   public static void main(String[] args) {
     dp_prob40 sbt = new dp_prob40();
-    int prices[] = { 2, 5, 7, 1, 4, 3, 1, 3 };
+    int k = 3;
+    int price[] = { 12, 14, 17, 10, 14, 13, 12, 15 };
 
-    System.out.println("Max profit fast solution " + sbt.maxProfit(prices, 3));
+    int n = price.length;
+
+    System.out.println("Maximum profit is: " +
+        sbt.maxProfit(price, n, k));
+    // System.out.println("Max profit fast solution " + sbt.maxProfit(prices, 3));
     // System.out.println("Max profit slow solution " +
     // sbt.maxProfitSlowSolution(prices, 3));
   }

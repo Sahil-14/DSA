@@ -8,74 +8,69 @@
 import java.util.*;
 
 class prob9 {
-  static class Pair {
-    int first, second;
 
-    Pair(int a, int b) {
-      first = a;
-      second = b;
+  // subarray-sum-equals-k
+  public class Solution {
+    public int subarraySum(int[] nums, int k) {
+      int count = 0, sum = 0;
+      HashMap<Integer, Integer> map = new HashMap<>();
+      map.put(0, 1);
+      for (int i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        if (map.containsKey(sum - k))
+          count += map.get(sum - k);
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+      }
+      return count;
     }
+
+   
   }
 
-  static ArrayList<Pair> findSubArrays(int[] arr, int n) {
-    HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+  // Utility function to insert <key, value> into the multimap
+  private static <K, V> void insert(Map<K, List<V>> hashMap, K key, V value) {
+    // if the key is seen for the first time, initialize the list
+    hashMap.putIfAbsent(key, new ArrayList<>());
+    hashMap.get(key).add(value);
+  }
 
-    // create an empty vector of pairs to store
-    // subarray starting and ending index
-    ArrayList<Pair> out = new ArrayList<>();
-    // Maintains sum of elements so far
+  // Function to print all subarrays with a zero-sum in a given array
+  public static void printAllSubarrays(int[] nums) {
+    // create an empty multimap to store the ending index of all
+    // subarrays having the same sum
+    Map<Integer, List<Integer>> hashMap = new HashMap<>();
+
+    // insert (0, -1) pair into the map to handle the case when
+    // subarray with zero-sum starts from index 0
+    insert(hashMap, 0, -1);
+
     int sum = 0;
-    for (int i = 0; i < n; i++) {
 
-      // add current element to sum
-      sum += arr[i];
+    // traverse the given array
+    for (int i = 0; i < nums.length; i++) {
+      // sum of elements so far
+      sum += nums[i];
 
-      // if sum is 0, we found a subarray starting
-      // from index 0 and ending at index i
-      if (sum == 0)
-        out.add(new Pair(0, i));
+      // if the sum is seen before, there exists at least one
+      // subarray with zero-sum
+      if (hashMap.containsKey(sum)) {
+        List<Integer> list = hashMap.get(sum);
 
-      ArrayList<Integer> al = new ArrayList<>();
-
-      // If sum already exists in the map there exists
-      // at-least one subarray ending at index i with
-      // 0 sum
-      if (map.containsKey(sum)) {
-        // map[sum] stores starting index of all subarrays
-        al = map.get(sum);
-        for (int it = 0; it < al.size(); it++) {
-          out.add(new Pair(al.get(it) + 1, i));
+        // find all subarrays with the same sum
+        for (Integer value : list) {
+          System.out.println("Subarray [" + (value + 1) + "…" +
+              i + "]");
         }
       }
-
-      al.add(i);
-      map.put(sum, al);
-    }
-    return out;
-
-  }
-
-  // Utility function to print all subarrays with sum 0
-  static void print(ArrayList<Pair> out) {
-    for (int i = 0; i < out.size(); i++) {
-      Pair p = out.get(i);
-      System.out.println("Subarray found from Index "
-          + p.first + " to " + p.second);
+      // insert (sum so far, current index) pair into the multimap
+      insert(hashMap, sum, i);
     }
   }
 
   // Driver code
-  public static void main(String args[]) {
-    int[] arr = { 6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7 };
-    int n = arr.length;
-
-    ArrayList<Pair> out = findSubArrays(arr, n);
-
-    // if we did not find any subarray with 0 sum,
-    // then subarray does not exists
-    if (out.size() == 0)
-      System.out.println("No subarray exists");
-    else
-      print(out);
+  public static void main(String[] args) {
+    int[] nums = { 4, 2, -3, -1, 0, 4 };
+    printAllSubarrays(nums);
   }
+
 }

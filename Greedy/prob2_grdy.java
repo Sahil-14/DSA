@@ -38,7 +38,7 @@ public class prob2_grdy {
 
   static void findMin(int v) {
     Vector<Integer> ans = new Vector<>();
-    for (int i = n - 2; i >= 0; i--) {
+    for (int i = n - 1; i >= 0; i--) {
       while (v >= deno[i]) {
         v -= deno[i];
         ans.add(deno[i]);
@@ -54,7 +54,7 @@ public class prob2_grdy {
 
   // Driver code
   public static void main(String[] args) {
-    int n = 93;
+    int n = 1500;
     System.out.print(
         "Following is minimal number "
             + "of change for " + n + ": ");

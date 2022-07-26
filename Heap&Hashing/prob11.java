@@ -25,21 +25,29 @@ import java.util.*;
 public class prob11 {
   static int findLength(int arr[]) {
     int n = arr.length;
-    int max_len = 1;
+    int max_len = 1; // Initialize result
 
+    // One by one fix the starting points
     for (int i = 0; i < n - 1; i++) {
+      // Create an empty hash set and add i'th element
+      // to it.
       HashSet<Integer> set = new HashSet<>();
       set.add(arr[i]);
+
+      // Initialize max and min in current subarray
       int mn = arr[i], mx = arr[i];
 
-      for (int j = i + 1; j < n; i++) {
+      // One by one fix ending points
+      for (int j = i + 1; j < n; j++) {
+        // If current element is already in hash set, then
+        // this subarray cannot contain contiguous elements
         if (set.contains(arr[j]))
           break;
 
         // Else add current element to hash set and update
         // min, max if required.
         set.add(arr[j]);
-        mn = Math.min(mn, arr[i]);
+        mn = Math.min(mn, arr[j]);
         mx = Math.max(mx, arr[j]);
 
         // We have already checked for duplicates, now check
@@ -49,7 +57,6 @@ public class prob11 {
       }
     }
     return max_len; // Return result
-
   }
 
   public static void main(String[] args) {

@@ -18,7 +18,7 @@ public class prob15 {
 
   Node root;
 
-  /*
+  /* 
    * This function traverse the skewed binary tree and
    * stores its nodes pointers in vector nodes[]
    */

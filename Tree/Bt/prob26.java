@@ -44,6 +44,7 @@ public class prob26 {
         printVector(path, i);
       }
     }
+    // Remove the current element from the path
 
     path.remove(path.size() - 1);
   }

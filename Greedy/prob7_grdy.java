@@ -1,3 +1,17 @@
+/**
+ * 
+ * find maximum equal sum of every 3 stacks
+ * 
+ * Input : stack1[] = { 3, 10}
+ * stack2[] = { 4, 5 }
+ * stack3[] = { 2, 1 }
+ * Output : 0
+ * Sum can only be equal after removing all elements
+ * from all stacks
+ * 
+ * 
+ */
+
 public class prob7_grdy {
   public static int maxSum(int stack1[], int stack2[],
       int stack3[], int n1, int n2,

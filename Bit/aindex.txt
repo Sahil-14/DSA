@@ -1,0 +1,11 @@
+1.bit operations (get,set,clear,update)
+2.check whether number is power of 2
+3.count set bits
+4.print all subset
+5.find position of only set bit
+6.count flip bits
+7.find 2 unique
+8.find 2 missing
+9.copy set bits from y to x; **
+10.square   ** 
+11. division **

@@ -21,6 +21,7 @@ public class prob6 {
         Integer.MAX_VALUE);
   }
 
+
   boolean isBSTUtil(Node node, int min, int max) {
     if (node == null) {
       return true;
@@ -33,6 +34,7 @@ public class prob6 {
     return (isBSTUtil(node.left, min, node.data - 1) && (isBSTUtil(node.right, node.data + 1, max)));
   }
 
+  
   public static void main(String args[]) {
     prob6 tree = new prob6();
     tree.root = new Node(4);

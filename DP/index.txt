@@ -28,7 +28,7 @@
 28.Box stacking problem (longest increating subsequence) (compartor sorting)
 29.baloon bursting problem (uppper tringular matrix) (formula)
 30.maximum sum subsequence not adjucent(inclusive exclusive)
-31.string interleaving (2d matrix) (formula) (string)
+31.string interleaving (2d matrix) (formula) (string)  ***
 32.count the number of binary tree (catalin number)
 33.Maximum sum increasing subsequence (1d array)(Longest increasing subsequence)
 34.count number of path from top left to bottom right(2d matrix)
@@ -43,7 +43,7 @@
 39.count no of binary tree of preorder sequence of length n (cataline number)
  i goes from 2 to n
  j goes from 0 to i
-40. stock buy sell 
+40. stock buy sell   **
     T[i][j] =  max of  
                 1.T[i][j-1]  --  no transaction on jth day
                 2.price[j] -price[m](buying at j selling at mth day ) + T[i-1][m]  -- (with one less transation and ending at max)()  as we have m no of days, 

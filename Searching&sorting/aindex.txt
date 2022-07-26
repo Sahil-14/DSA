@@ -6,11 +6,13 @@
 6. Ceiling in a sorted array
 7. Find a pair with the given difference
 8.Count triplets with sum smaller than a given value
-9.Java program to print all subarrays in the array which has sum 0
-10.Check if reversing a sub array make the array sorted(*)
+9.Java program to print all subarrays in the array which has sum 0  **
+10.Check if reversing a sub array make the array sorted  (*)
 11.Make all array elements equal with minimum cost
 12.count inversion
 13.minimum page allocation
 14.merge sorted array
 15.median-of-two-sorted-arrays-of-different-sizes
-
+16.merge k sorted list (**)
+17. Find the smallest positive number missing from an unsorted array
+18. K maximum sum combinations from two arrays

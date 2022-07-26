@@ -1,0 +1,11 @@
+8.zigzag traversal **
+9.Check if all leaves are at same level  **
+13.isomeric
+14.build tree from postorder and inorder  **
+16. Print Nodes in Top View of Binary Tree **
+17.bottom View
+18.digonal View
+19.boundary traversal **
+
+22.kth ansestor  (**)
+23. Check if a Binary Tree contains duplicate subtrees of size 2 or more

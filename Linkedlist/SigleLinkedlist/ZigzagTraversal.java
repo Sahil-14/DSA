@@ -1,3 +1,15 @@
+/**
+ * Input: 1->2->3->4
+ * Output: 1->3->2->4
+ * Explanation : 1 and 3 should come first before 2 and 4 in zig-zag fashion, So
+ * resultant linked-list will be 1->3->2->4.
+ * 
+ * Input: 11->15->20->5->10
+ * Output: 11->20->5->15->10
+ * 
+ * 
+ */
+
 public class ZigzagTraversal {
   static class Node {
     int data;

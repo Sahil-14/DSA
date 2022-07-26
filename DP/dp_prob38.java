@@ -16,6 +16,7 @@ public class dp_prob38 {
         T[i][j] = T[i - 1][j] + T[i][j - 1] + matrix[i - 1][j - 1] - T[i - 1][j - 1];
       }
     }
+    
   }
   
 

@@ -2,7 +2,6 @@
 /**
  * 
  * 
- * 
  * Video link - https://youtu.be/RORuwHiblPc
  * 
  * Given a sequence of words, and a limit on the number of characters

@@ -6,7 +6,6 @@
  */
 import java.util.*;
 
-
 public class prob17 {
   static class Node {
     int data; // data of the node
@@ -57,12 +56,8 @@ public class prob17 {
       }
     }
 
-    Set<Entry<Integer, Integer>> set = map.entrySet();
-    // Make an iterator
-    Iterator<Entry<Integer, Integer>> iterator = set.iterator();
-    while (iterator.hasNext()) {
-      Map.Entry<Integer, Integer> me = iterator.next();
-      System.out.print(me.getValue() + " ");
+    for (Map.Entry<Integer, Integer> hm : map.entrySet()) {
+      System.out.println(hm.getValue());
     }
   }
 

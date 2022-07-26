@@ -18,6 +18,10 @@ public class prob_str3 {
     System.out.println(reverse);
   }
 
+  public static String removeVowel(String s) {
+    return s.replaceAll("[aeiouAEIOU]", "");
+  }
+
   public static void reverse3(String s) {
     String input = s;
     byte[] strAsByteArray = input.getBytes();
@@ -29,10 +33,10 @@ public class prob_str3 {
   }
 
   public static void main(String[] args) {
-    reverse("sahil");
-    System.out.println();
-    reverse2("sahil");
-    System.out.println();
-    reverse3("sahil");
+    // reverse("sahil");
+    // System.out.println();
+    String res = removeVowel("welcome to geeksforgeeks");
+    System.out.println(res.length());
+
   }
 }

@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Reverse {
     Node head = null;
 
@@ -45,15 +46,16 @@ public class Reverse {
         head.next = null;
         return rest;
     }
-    void reverseLLUsingStack(){
+
+    void reverseLLUsingStack() {
         Stack<Node> s = new Stack<>();
         Node temp = head;
-        while(temp.next != null){
+        while (temp.next != null) {
             s.add(temp);
             temp = temp.next;
         }
         head = temp;
-        while(!s.isEmpty()){
+        while (!s.isEmpty()) {
             temp.next = s.peek();
             s.pop();
             temp = temp.next;
