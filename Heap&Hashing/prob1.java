@@ -35,7 +35,6 @@ public class prob1 {
 
     for (int i = 0; i <= n - k; i++) {
       result = Math.min(result, arr[i + k - 1] - arr[i]);
-
     }
     return result;
   }

@@ -66,10 +66,8 @@ public class prob2 {
     int[] top = new int[k];
     for (int i = k - 1; i >= 0; i--) {
       top[i] = heap.poll();
-
     }
     return top;
-
   }
 
   public static void main(String[] args) {

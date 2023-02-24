@@ -1,0 +1,5 @@
+1.ratInMaze
+2.The N Queen is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other. 
+3.combinational sum1
+4.candidate numbers
+5.find logest path in maze

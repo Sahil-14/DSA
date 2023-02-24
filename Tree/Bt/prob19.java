@@ -13,65 +13,87 @@ public class prob19 {
 
   Node root;
 
-  void printLeaves(Node node) {
-    if (node == null) {
-      return;
-    }
-    printLeaves(node.left);
+  private boolean isLeaf(Node node) {
     if (node.left == null && node.right == null) {
-      System.out.print(node.data + " ");
+      return true;
     }
-    printLeaves(node.right);
+    return false;
   }
 
-  void printBoundaryLeft(Node node) {
-    if (node == null) {
+  private void addLeftBound(Node root,
+      ArrayList<Integer> ans) {
+    root = root.left;
+    while (root != null) {
+      if (!isLeaf(root)) {
+        ans.add(root.data);
+      }
+      if (root.left != null) {
+        root = root.left;
+      } else {
+        root = root.right;
+      }
+    }
+  }
+
+  private void addRightBound(Node root,
+      ArrayList<Integer> ans) {
+    root = root.right;
+    Stack<Integer> st = new Stack<>();
+    while (root != null) {
+      if (!isLeaf(root)) {
+        ans.add(root.data);
+      }
+      if (root.right != null) {
+        root = root.right;
+      } else {
+        root = root.left;
+      }
+    }
+
+    while (!st.isEmpty()) {
+      ans.add(stk.peek());
+      stk.pop();
+    }
+  }
+
+  // its kind of inorder
+  private void addLeaves(Node root,
+      ArrayList<Integer> ans) {
+    if (root == null) {
       return;
     }
 
-    if (node.left != null) {
-      System.out.print(node.data + " ");
-      printBoundaryLeft(node.left);
-    } else if (node.right != null) {
-      System.out.print(node.data + " ");
-      printBoundaryLeft(node.right);
+    if (isLeaf(root)) {
+      ans.add(root.data); // just store leaf nodes
+      return;
     }
+
+    addLeaves(root.left, ans);
+    addLeaves(root.right, ans);
   }
 
-  void printBoundaryRight(Node node) {
-    if (node == null)
-      return;
-    if (node.right != null) {
-      // to ensure bottom up order, first call for right
-      // subtree, then print this node
-      printBoundaryRight(node.right);
-      System.out.print(node.data);
-    } else if (node.left != null) {
-      printBoundaryRight(node.left);
-      System.out.print(node.data + " ");
+  ArrayList<Integer> boundary(Node root) {
+    ArrayList<Integer> ans = new ArrayList<>();
+    if (root == null) {
+      return ans;
     }
-    // do nothing if it is a leaf node, this way we avoid
-    // duplicates in output
-  }
 
-  void printBoundary(Node node) {
-    if (node == null)
-      return;
+    if (!isLeaf(root)) {
+      ans.add(root.data); // if leaf then its done by
+                          // addLeaves
+    }
 
-    System.out.print(node.data + " ");
-
-    printBoundaryLeft(node.left);
-    // Print all leaf nodes
-    printLeaves(node.left);
-    printLeaves(node.right);
-
-    // Print the right boundary in bottom-up manner
-    printBoundaryRight(node.right);
+    addLeftBound(root, ans);
+    addLeaves(root, ans);
+    addRightBound(root, ans);
+    return ans;
   }
 
   // Driver program to test above functions
-  public static void main(String args[]) {
-    prob19 tree = new prob19();
+  public static void main(String[] args) {
+    // Let us construct the tree given in the above
+    // diagram
+    BinaryTree tree = new BinaryTree();
     tree.root = new Node(20);
     tree.root.left = new Node(8);
     tree.root.left.left = new Node(4);
@@ -80,6 +102,12 @@ public class prob19 {
     tree.root.left.right.right = new Node(14);
     tree.root.right = new Node(22);
     tree.root.right.right = new Node(25);
-    tree.printBoundary(tree.root);
+
+    ArrayList<Integer> ans = tree.boundary(tree.root);
+
+    for (int i = 0; i < ans.size(); i++) {
+      System.out.print(ans.get(i) + " ");
+    }
+    System.out.println();
   }
 }

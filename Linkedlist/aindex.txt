@@ -1,0 +1,29 @@
+1. Linkedlist operations
+2.Detect loop in ll
+3.Find mid nod
+4.remove duplicates from sorted and unsorted list
+5.find length of loop
+6.remove loop
+7.get nth node
+8.get nth node from last
+9.reverse ll
+10.Intersection point of 2 ll
+11.Merge 2 list
+12.merge sort
+13.swap node withoud swaping data
+14.check if list is palindrome or not
+15.swap elements pairwise.
+16.reverse double linked list
+17.Segregate even and odd nodes in a Linked List
+18.Rotate a Linked List
+19.circular ll traversal and counting
+20.check if list is circular linked list
+21.swap first and last node of circular ll
+22.delete node from circular ll
+23.multiply 2 numbers
+24.Rearrange list
+25.delete node having greater value on right
+26.Rearrange 2
+27.Flatten a multilevel linked list
+28.Clone a linked list with next and random pointer in O(1) space
+29.add 2 no represented by ll

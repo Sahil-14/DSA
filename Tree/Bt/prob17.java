@@ -61,6 +61,43 @@ public class prob17 {
     }
   }
 
+  public void bottomView2() {
+    if (root == null) {
+      return;
+    }
+    root.hd = 0;
+    int min = 0;
+    int max = 0;
+
+    Queue<Node> q = new LinkedList<>();
+    Map<Integer, Integer> mp = new HashMap<>();
+
+    q.add(root);
+
+    while (!q.isEmpty()) {
+      Node temp = q.poll();
+      mp.put(temp.hd, temp.data);
+      if (temp.left != null) {
+        temp.left.hd = temp.hd - 1;
+        q.add(temp.left);
+        min = Math.min(min, temp.hd - 1);
+      }
+
+      if (temp.right != null) {
+        temp.right.hd = temp.hd + 1;
+        q.add(temp.right);
+        max = Math.max(max, temp.hd + 1);
+      }
+    }
+
+    for (; min <= max; min++) {
+      System.out.print(mp.get(min) + " ");
+    }
+
+    System.out.println();
+
+  }
+
   public static void main(String[] args) {
     Node root = new Node(20);
     root.left = new Node(8);
@@ -73,7 +110,7 @@ public class prob17 {
     root.left.right.right = new Node(14);
     prob17 tree = new prob17(root);
     System.out.println("Bottom view of the given binary tree:");
-    tree.bottomView();
+    tree.bottomView2();
   }
 
 }

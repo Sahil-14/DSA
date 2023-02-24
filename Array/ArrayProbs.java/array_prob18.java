@@ -19,6 +19,9 @@ public class array_prob18 {
       }
     });
 
+
+    
+
     int index = 0; //
     // i = 1
     for (int i = 1; i < arr.length; i++) {

@@ -6,7 +6,7 @@ public class dp_prob10 {
 
         T[0][0] = true;
         // Deals with patterns like a* or a*b* or a*b*c*
-        for (int i = 1; i < T[0].length; i++) {
+        for (int i = 2; i < T[0].length; i++) {
             if (pattern[i - 1] == '*') {
                 T[0][i] = T[0][i - 2];
             }
@@ -45,7 +45,7 @@ public class dp_prob10 {
         System.out.println(rm.matchReg("abbbbccc".toCharArray(), ".*bcc*".toCharArray()));
         System.out.println(rm.matchReg("aaa".toCharArray(), "ab*a*c*a".toCharArray()));
 
-        System.out.println(rm.matchReg("aa".toCharArray(), "a*".toCharArray()));
+        System.out.println(rm.matchReg("ab".toCharArray(), ".*".toCharArray()));
     }
 }
 

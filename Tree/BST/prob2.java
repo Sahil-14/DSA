@@ -53,7 +53,6 @@ public class prob2 {
       root.key = minValue(root.right);
       root.right = deleteRec(root.right, root.key);
     }
-
     return root;
   }
 

@@ -1,10 +1,13 @@
 import java.util.*;
 
 public class prob17_graph {
+
   static class qentry {
     int v;// Vertex number
     int dist;// Distance of this vertex from source
   }
+
+  
 
   public static void main(String[] args) {
     int N = 30;
@@ -45,7 +48,7 @@ public class prob17_graph {
       for (int j = v + 1; j <= (v + 6) && j < n; ++j) {
         if (visited[j] == 0) {
           qentry a = new qentry();
-          a.dist = (qe.dist + 1);
+          a.dist = (qe.dist + 1);  
           visited[j] = 1;
           if (move[j] != -1) {
             a.v = move[j];
@@ -59,4 +62,5 @@ public class prob17_graph {
     return qe.dist;
 
   }
+
 }

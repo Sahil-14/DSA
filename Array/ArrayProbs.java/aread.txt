@@ -24,3 +24,5 @@
 25.longest subarray with sum divisible by k (***)
 26.next greater
 27.next smaller
+28.29.array rearrangements
+30.Minimum number of swaps required to sort an array

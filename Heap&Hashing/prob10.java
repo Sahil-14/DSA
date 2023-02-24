@@ -72,9 +72,7 @@ public class prob10 {
       return "";
     else if (mp.containsKey(rem))
       return res.substring(mp.get(rem));
-
     return "";
-
   }
 
   public static void main(String[] args) {

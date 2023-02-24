@@ -21,7 +21,7 @@ public class prob16_graph {
     for (int c = 1; c <= m; c++) {
       if (isSafe(v, graph, color, c)) {
         color[v] = c;
-        if (graphColoringUtil(graph, m, color, v + 1)) {
+        if (graphColoringUtil(graph, m, color, v + 1  )) {
           return true;
         }
         color[v] = 0;
@@ -29,8 +29,6 @@ public class prob16_graph {
     }
     return false;
   }
-
-
 
   boolean graphColoring(int graph[][], int m) {
     color = new int[V];
@@ -74,7 +72,16 @@ public class prob16_graph {
         { 1, 1, 0, 1 },
         { 1, 0, 1, 0 },
     };
+
+    // for (int i = 0; i < n - 1; i++) {
+    // int j = i + 1;
+    // if (A[i] != B[j] && i != j) {
+    // int index = select(A);
+    // cost += B[index];
+    // }
+    // }
     int m = 3; // Number of colors
     Coloring.graphColoring(graph, m);
   }
+
 }

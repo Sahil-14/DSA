@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /**
  * Disjoint Set (Or Union-Find) | Set 1 (Detect Cycle in an Undirected Graph)
  * Find: Determine which subset a particular element is in. This can be used for

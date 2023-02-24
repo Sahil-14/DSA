@@ -8,18 +8,26 @@ public class array_prob6 {
       return mid;
     }
 
+    
     if (arr[left] <= arr[mid]) {
       if (key >= arr[left] && key <= arr[mid]) {
         return searchSortedAndRotated(arr, n, left, mid - 1, key);
       }
       return searchSortedAndRotated(arr, n, mid + 1, right, key);
     }
+
     if (key >= arr[mid] && key <= arr[right]) {
       return searchSortedAndRotated(arr, n, mid + 1, right, key);
     }
 
     return searchSortedAndRotated(arr, n, left, mid - 1, key);
   }
+
+  //time : logn
+  // space: 1
+
+  // 4, 5, 6, 7, 8, 9, 1, 2, 3
+  // 0, 1, 2, 3, 4, 5, 6, 7, 8
 
   public static void main(String args[]) {
     int arr[] = { 4, 5, 6, 7, 8, 9, 1, 2, 3 };

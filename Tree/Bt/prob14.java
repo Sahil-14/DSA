@@ -26,7 +26,6 @@ public class prob14 {
     tNode.left = buildTree(in, pre, inStrt, inIndex - 1);
     tNode.right = buildTree(in, pre, inIndex + 1, inEnd);
     return tNode;
-
   }
 
   public static Node buldTreeWrap(char[] in, char[] pre, int len) {

@@ -44,7 +44,6 @@ public class bt_prob2 {
         if (nQueen(arr, x + 1, n)) {
           return true;
         }
-
       }
       arr[x][col] = 0;
     }

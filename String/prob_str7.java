@@ -4,7 +4,7 @@ public class prob_str7 {
       System.out.println(ans);
       return;
     }
-  
+
     for (int i = 0; i < s.length(); i++) {
       char ch = s.charAt(i);
       String ros = s.substring(0, i) + s.substring(i + 1);
@@ -12,8 +12,13 @@ public class prob_str7 {
     }
   }
 
+  //kth permutation
+
   public static void main(String[] args) {
     permutation("1234", "");
   }
+
+
+
 
 }

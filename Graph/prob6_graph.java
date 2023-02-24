@@ -26,7 +26,7 @@ public class prob6_graph {
     if (recStack[i]) {
       return true;
     }
-
+    
     if (visited[i])
       return false;
 

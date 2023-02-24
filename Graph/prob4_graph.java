@@ -21,8 +21,7 @@ import java.util.*;
  * 
  */
 
-
-//dfs
+// dfs
 public class prob4_graph {
   private int V;
   private ArrayList<ArrayList<Integer>> adj;
@@ -71,6 +70,51 @@ public class prob4_graph {
     }
   }
 
+  // kahn's algorithm
+  public void topologicalSort2() {
+    int indegree[] = new int[V];
+
+    for (int i = 0; i < V; i++) {
+      ArrayList<Integer> temp = adj.get(i);
+      for (int node : temp) {
+        indegree[node]++;
+      }
+    }
+
+    Queue<Integer> q = new LinkedList<Integer>();
+    for (int i = 0; i < V; i++) {
+      if (indegree[i] == 0)
+        q.add(i);
+    }
+
+    int cnt = 0;
+
+    Vector<Integer> topOrder = new Vector<>();
+    while (!q.isEmpty()) {
+      int u = q.poll();
+      topOrder.add(u);
+
+      for (int node : adj.get(u)) {
+        if (--indegree[node] == 0) {
+          q.add(node);
+        }
+      }
+      cnt++;
+    }
+
+    // Check if there was a cycle
+    if (cnt != V) {
+      System.out.println(
+          "There exists a cycle in the graph");
+      return;
+    }
+
+    // Print topological order
+    for (int i : topOrder) {
+      System.out.print(i + " ");
+    }
+  }
+
   public static void main(String args[]) {
     // Create a graph given in the above diagram
     prob4_graph g = new prob4_graph(6);
@@ -83,6 +127,6 @@ public class prob4_graph {
     System.out.println("Following is a Topological "
         + "sort of the given graph");
     // Function Call
-    g.topologicalSort();
+    g.topologicalSort2();
   }
 }

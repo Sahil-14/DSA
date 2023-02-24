@@ -16,7 +16,7 @@ public class prob20_graph {
       boolean visited[][]) {
     // row number is in range, column number is in range
     // and value is 1 and not yet visited
-    return (row >= 0) && (row < ROW) && (col >= 0) && (col < COL) && (M[row][col] == 1 && !visited[row][col]);
+    return (row >= 0) && (row < ROW) && (col >= `0) && (col < COL) && (M[row][col] == 1 && !visited[row][col]);
   }
 
   void DFS(int M[][], int row, int col, boolean visited[][]) {
@@ -24,14 +24,14 @@ public class prob20_graph {
     // of 8 neighbors of a given cell
     int rowNbr[] = new int[] { -1, -1, -1, 0, 0, 1, 1, 1 };
     int colNbr[] = new int[] { -1, 0, 1, -1, 1, -1, 0, 1 };
-
+   
     // Mark this cell as visited
     visited[row][col] = true;
 
     // Recur for all connected neighbours
     for (int k = 0; k < 8; ++k)
       if (isSafe(M, row + rowNbr[k], col + colNbr[k], visited))
-        DFS(M, row + rowNbr[k], col + colNbr[k], visited);
+        DFS(M, row + rowNbr[k], col + colNbr[k], vis ited);
   }
 
   int countIslands(int M[][]) {

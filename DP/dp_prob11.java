@@ -29,30 +29,31 @@ public class dp_prob11 {
         return max[price.length];
     }
 
-    public int maxValBOtotmup(int price[], int len) {
-        int T[][] = new int[price.length + 1][len + 1];
-        for (int i = 0; i < T[0].length; i++) {
-            T[0][i] = 0;
-        }
-        for (int i = 0; i < T.length; i++) {
-            T[i][0] = 0;
-        }
-        for (int i = 1; i <= price.length; i++) {
-            for (int j = 1; j <= len; j++) {
-                if (j - i >= 0) {
-                    T[i][j] = Integer.max(T[i - 1][j], T[i][j - i] + price[i - 1]);
+    public static int cutRod(int prices[], int n) {
+
+        int mat[][] = new int[n + 1][n + 1];
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0 || j == 0) {
+                    mat[i][j] = 0;
                 } else {
-                    T[i][j] = T[i - 1][j];
+                    if (i == 1) {
+                        mat[i][j] = j * prices[i - 1];
+                    } else {
+                        if (i > j) {
+                            mat[i][j] = mat[i - 1][j];
+                        } else {
+                            mat[i][j] = Math.max(
+                                    prices[i - 1]
+                                            + mat[i][j - i],
+                                    mat[i - 1][j]);
+                        }
+                    }
                 }
             }
         }
-        for (int i = 0; i <= price.length; i++) {
-            for (int j = 0; j <= len; j++) {
-                System.out.print(T[i][j] + " ");
-            }
-            System.out.println();
-        }
-        return T[price.length][len];
+
+        return mat[n][n];
     }
 
     public static void main(String args[]) {

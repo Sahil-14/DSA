@@ -90,11 +90,11 @@ public class tree_prob1 {
       Node temp = stack1.pop();
       if (temp.left != null) {
         stack1.push(node.left);
-      }
+      } 
 
       if (temp.right != null) {
         stack1.push(node.right);
-      }
+      } 
       stack2.push(temp);
     }
 

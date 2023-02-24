@@ -3,6 +3,27 @@
 import java.util.Stack;
 
 public class array_prob26 {
+
+  /*
+   * prints element and NGE pair for
+   * all elements of arr[] of size n
+   * 
+   * O(n2)
+   */
+  static void printNG1(int arr[], int n) {
+    int next, i, j;
+    for (i = 0; i < n; i++) {
+      next = -1;
+      for (j = i + 1; j < n; j++) {
+        if (arr[i] < arr[j]) {
+          next = arr[j];
+          break;
+        }
+      }
+      System.out.println(arr[i] + " -- " + next);
+    }
+  }
+
   public static void nextGreater(int arr[], int n) {
     int i = 0;
     Stack<Integer> s = new Stack<>();

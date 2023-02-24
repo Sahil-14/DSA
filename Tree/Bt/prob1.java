@@ -52,6 +52,14 @@ class prob1 {
 
   }
 
+  /**
+   * 
+   * Time Complexity: O(n)
+   * 
+   * Auxiliary Space: O(n)
+   * 
+   */
+
   public static void main(String[] args) {
     prob1 tree = new prob1();
     tree.root = new Node(1);

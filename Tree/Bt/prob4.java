@@ -15,6 +15,13 @@ public class prob4 {
     return root;
   }
 
+  /**
+   * Time & Space Complexities: Worst-case Time complexity is O(n) and for space
+   * complexity, If we don’t consider the size of the recursive stack for function
+   * calls then O(1) otherwise O(h) where h is the height of the tree
+   * 
+   */
+
   // method 2:
   public TreeNode invertTree(TreeNode root) {
     if (root == null)

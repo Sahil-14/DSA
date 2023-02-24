@@ -19,7 +19,6 @@ public class dp_prob23 {
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 T[i][j] = cost[i][j] + Math.min(T[i - 1][j], T[i][j - 1]);// if only right and bottom move allow
-               
             }
         }
         path(T, cost, m - 1, n - 1);

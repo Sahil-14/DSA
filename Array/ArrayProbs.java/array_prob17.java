@@ -61,76 +61,41 @@ public class array_prob17 {
     return pair;
   }
 
-  public static void findTriplets2(int a[], int n, int sum) {
-    int i;
+  // target 0
+  public static List<List<Integer>> threeSum(int[] nums) {
 
-    // Sort the input array
-    Arrays.sort(a);
+    List<List<Integer>> ans = new ArrayList<List<Integer>>();
+    Arrays.sort(nums);
+    int n = nums.length;
 
-    // For handling the cases when no such
-    // triplets exits.
-    boolean flag = false;
+    for (int i = 0; i < n; i++) {
+      int p = i + 1, q = n - 1;
+      while (p < q) {
+        if (nums[p] + nums[q] == -nums[i]) { // System.out.println(p+" "+q);
+          List<Integer> t = new ArrayList<Integer>();
+          t.add(nums[i]);
+          t.add(nums[p]);
+          t.add(nums[q]);
 
-    // Iterate over the array from start to n-2.
-    for (i = 0; i < n - 2; i++) {
-      if (i == 0 || a[i] > a[i - 1]) {
-        // Index of the first element in
-        // remaining range.
-        int start = i + 1;
+          ans.add(t);
 
-        // Index of the last element
-        int end = n - 1;
+          while (p + 1 < q && nums[p + 1] == nums[p])
+            p++;
+          while (q - 1 > p && nums[q - 1] == nums[q])
+            q--;
 
-        // Setting our new target
-        int target = sum - a[i];
-
-        while (start < end) {
-          // Checking if current element
-          // is same as previous
-          if (start > i + 1
-              && a[start] == a[start - 1]) {
-            start++;
-            continue;
-          }
-
-          // Checking if current element is
-          // same as previous
-          if (end < n - 1
-              && a[end] == a[end + 1]) {
-            end--;
-            continue;
-          }
-
-          // If we found the triplets then print it
-          // and set the flag
-          if (target == a[start] + a[end]) {
-            System.out.print("[" + a[i]
-                + "," + a[start]
-                + "," + a[end] + "] ");
-            flag = true;
-            start++;
-            end--;
-          }
-
-          // If target is greater then
-          // increment the start index
-          else if (target > (a[start] + a[end])) {
-            start++;
-          }
-
-          // If target is smaller than
-          // decrement the end index
-          else {
-            end--;
-          }
-        }
+          p++;
+          q--;
+        } else if (nums[p] + nums[q] < -nums[i])
+          p++;
+        else
+          q--;
       }
-    }
 
-    // If no such triplets found
-    if (flag == false) {
-      System.out.print("No Such Triplets Exist");
+      while (i + 1 < n && nums[i + 1] == nums[i])
+        i++;
     }
+    return ans;
   }
 
   // Driver code

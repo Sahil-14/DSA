@@ -81,7 +81,9 @@ public class prob17 {
       even = even.next;
 
     }
-    odd.next = evenstart;
+    if (odd != null) {
+      odd.next = evenstart;
+    }
   }
 
   void push(int new_data) {

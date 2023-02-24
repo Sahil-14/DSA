@@ -7,6 +7,22 @@
 
 
 public class array_prob7 {
+
+  //brute force 
+  /**
+   * In this approach, we find out every possible permutation of list formed by the elements 
+   * of the given array and find out the permutation which is just larger than the given one.
+   *  But this one will be a very naive approach, since it requires us to find out every possible
+   *  permutation which will take really long time and the implementation is complex.
+   *  Thus, this approach is not acceptable at all. Hence, we move on directly to the correct approach.
+   * 
+   * Time complexity : O(n!). Total possible permutations is n!.
+Space complexity : O(n). Since an array will be used to store the permutations.
+   */
+
+   // solution explanation
+   //https://leetcode.com/problems/next-permutation/solution/
+
   public void nextPermutation(int[] nums) {
     int i = nums.length - 2;
     while (i >= 0 && nums[i + 1] <= nums[i]) {
@@ -36,6 +52,13 @@ public class array_prob7 {
     nums[i] = nums[j];
     nums[j] = temp;
   }
+
+  /**
+   *t ime complexity : O(n)O(n). In worst case, only two scans of the whole array are needed
+Space complexity : O(1)O(1). No extra space is used. In place replacements are don
+   * 
+
+   */
 
   public static void main(String[] args) {
     array_prob7 ob = new array_prob7();

@@ -1,7 +1,5 @@
 import java.util.HashSet;
 
-import prob53.Node;
-
 /**
  * Check if a Binary Tree contains duplicate subtrees of size 2 or more
  * Given a Binary Tree, check whether the Binary tree contains a duplicate
@@ -30,6 +28,7 @@ public class prob23 {
       return s;
 
     s = s + root.data + lStr + rStr;
+
     if (s.length() > 3 && subtrees.contains(s))
       return "";
 
@@ -40,6 +39,7 @@ public class prob23 {
 
   public static String dupSub(Node root) {
     HashSet<String> subtrees = new HashSet<>();
+  
     return dupSubUtil(root, subtrees);
   }
 

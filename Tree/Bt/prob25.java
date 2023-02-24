@@ -144,3 +144,37 @@ public class prob25 {
     inorder(t);
   }
 }
+
+/**
+ * Serialization allows us to transfer an item across a network by converting it
+ * to a byte stream. It also helps to maintain the object’s condition.
+ * 
+ * Deserialization takes less time to construct an object than creating an
+ * object from a class. This holds in general and is not specific to our
+ * implementation.
+ * 
+ * By serializing the object into byte streams and then deserializing it, it is
+ * simple to clone.
+ * 
+ * Serialization aids in the implementation of software persistence. It
+ * facilitates the direct storage of objects in databases as byte streams. This
+ * is advantageous because the information is immediately accessible any time it
+ * is required.
+ * 
+ * It’s simple to use and can be tailored to your preferences.
+ * 
+ * The serialized stream can be encrypted, authenticated, and compressed to meet
+ * the security requirements of Java.
+ * 
+ * Serialized classes can provide consistent versioning and are adaptable enough
+ * to allow your application’s object model to evolve over time.
+ * 
+ * Using third-party vendor libraries within C++, serialization may also be used
+ * to exchange objects between Java and C++ libraries.
+ * 
+ * RMI, JavaBeans, and EJB are just a few of the essential technologies that
+ * rely on serialization. Java uses a different algorithm for serialization and
+ * deserialization from what we presented in this article
+ * 
+ * 
+ */

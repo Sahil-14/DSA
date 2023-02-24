@@ -30,7 +30,9 @@ public class dp_prob22 {
                 if (pattern[j - 1] == '?' || pattern[j - 1] == str[i - 1]) {
                     T[i][j] = T[i - 1][j - 1];
                 } else if (pattern[j - 1] == '*') {
-                    T[i][j] = T[i - 1][j] || T[i][j - 1];
+                    T[i][j] = T[i - 1][j] || T[i][j - 1]; //[i][j-1] - 0 occurence | [i-1][j] - 1 or more ocurrence ;
+                } else {
+                    T[i][j] = false;
                 }
             }
         }

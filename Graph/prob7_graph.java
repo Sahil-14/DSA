@@ -36,6 +36,8 @@ public class prob7_graph {
     return min_index;
   }
 
+ 
+
   void printMst(int parent[], int graph[][]) {
     System.out.println("Edge \tWeight");
     for (int i = 1; i < V; i++) {

@@ -19,6 +19,9 @@ public class prob5 {
     }
     return length;
   }
+  
+
+  // Find subarray with given sum
 
   public static void main(String[] args) {
     int[] arr = new int[] { 15, -2, 2, -8, 1, 7, 10, 23 };

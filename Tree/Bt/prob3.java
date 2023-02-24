@@ -77,6 +77,26 @@ public class prob3 {
         || isSubtree(T.right, S);
   }
 
+  /**
+   * 
+   * Time Complexity: Time worst-case complexity of above solution is O(mn) where
+   * m and n are number of nodes in given two trees.
+   * 
+   * Auxiliary space: O(n)
+   * 
+   */
+
+
+   /**
+    * We have discussed an O(n2) solution for this problem. In this post, the O(n)
+    * solution is discussed. The idea is based on the fact that inorder and
+    * preorder/postorder uniquely identify a binary tree. Tree S is a subtree of T
+    * if both inorder and preorder traversals of S are substrings of inorder and
+    * preorder traversals of T respectively.
+    * Following are detailed steps.
+    * 
+    */
+
   public static void main(String args[]) {
     prob3 tree = new prob3();
 

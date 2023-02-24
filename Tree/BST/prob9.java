@@ -30,7 +30,7 @@ public class prob9 {
         current = current.right;
       } else {
         pre = current.left;
-        while (pre != null || pre.right != null) {
+        while (pre != null || pre.right != current) {
           pre = pre.right;
         }
         if (pre.right != null) {

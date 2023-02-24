@@ -10,6 +10,8 @@
  * so on.
  * Each node is a C struct with the following definition.
  * 
+ * 
+ * https://www.geeksforgeeks.org/flatten-a-linked-list-with-next-and-child-pointers/
  */
 public class prob27 {
   static Node head;

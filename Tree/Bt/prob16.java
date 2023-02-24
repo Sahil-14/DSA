@@ -33,7 +33,14 @@ public class prob16 {
     }
   }
 
-  private void TopView(Node root) {
+  /**
+   * Time complexity: O(n*log(n)), where n is the number of nodes in the given
+   *
+   * * tree.
+   * Auxiliary Space : O(n), As we store nodes in the map and queue.
+   * 
+   */
+  private void TopView1(Node root) {
     Queue<QueueObj> q = new LinkedList<QueueObj>();
     Map<Integer, Node> topViewMap = new TreeMap<Integer, Node>();
 
@@ -69,6 +76,46 @@ public class prob16 {
     }
   }
 
+  /**
+   * Time complexity: O(n*log(n)), where n is the number of nodes in the given
+   *
+   * * tree.
+   * Auxiliary Space : O(n), As we store nodes in the map and queue.
+   * 
+   */
+  private void topView(Node root) {
+    if (root == null) {
+      return;
+    }
+
+    Queue<QueueObj> q = new LinkedList<>();
+    Map<Integer, Integer> mp = new HashMap<>();
+    int min = 0;
+    int max = 0;
+
+    q.add(new QueueObj(root, 0));
+    while (!q.isEmpty()) {
+      QueueObj temp = q.poll();
+      if (!mp.containsKey(temp.hd)) {
+        mp.put(temp.hd, temp.node.data);
+      }
+      if (temp.node.left != null) {
+        q.add(new QueueObj(temp.node.left, temp.hd - 1));
+        min = Math.min(min, temp.hd - 1);
+      }
+
+      if (temp.node.right != null) {
+        q.add(new QueueObj(temp.node.right, temp.hd + 1));
+        max = Math.max(max, temp.hd + 1);
+      }
+    }
+
+    for (; min <= max; min++) {
+      System.out.print(mp.get(min) + " ");
+    }
+    System.out.println();
+  }
+
   public static void main(String[] args) {
     /*
      * Create following Binary Tree
@@ -91,7 +138,7 @@ public class prob16 {
     tree.root.left.right.right.right = new Node(6);
     System.out.println(
         "Following are nodes in top view of Binary Tree");
-    tree.TopView(tree.root);
+    tree.topView(tree.root);
   }
 
 }

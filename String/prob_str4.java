@@ -1,4 +1,6 @@
+
 //remve adjecent duplicates from string
+import java.util.*;
 
 public class prob_str4 {
   public static String removeDuplicates(String s) {
@@ -35,11 +37,12 @@ public class prob_str4 {
     for (int i = 0; i < len; i++) {
       // character at i'th index of s
       char c = s.charAt(i);
-
+      System.out.println(str.indexOf(c));
       // if c is present in str, it returns
       // the index of c, else it returns -1
       if (str.indexOf(c) < 0) {
         // adding c to str if -1 is returned
+
         str += c;
       }
     }
@@ -50,6 +53,6 @@ public class prob_str4 {
   //
 
   public static void main(String[] args) {
-    System.out.println(removeDuplicates("aabdgh"));
+    System.out.println(unique("aagbdbgh"));
   }
 }

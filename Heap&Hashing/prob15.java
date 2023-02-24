@@ -24,7 +24,7 @@ public class prob15 {
   // Driver Code
   public static void main(String args[]) {
     int k = 4;
-    int arr[] = { 1, 3 };
+    int arr[] = { 1, 2,5,6,7,8 };
     int n = arr.length;
     System.out.println(ksmallest(arr, n, k));
   }

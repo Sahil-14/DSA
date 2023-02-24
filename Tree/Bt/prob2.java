@@ -10,7 +10,6 @@ public class prob2 {
       left = right = null;
     }
   }
-
   Node root;
 
   /* Given a binary tree, print its nodes in reverse level order */
@@ -46,6 +45,14 @@ public class prob2 {
       S.pop();
     }
   }
+
+  /**
+   * 
+   * Time Complexity: O(n)
+   * 
+   * Auxiliary Space: O(n)
+   * 
+   */
 
   // Driver program to test above functions
   public static void main(String args[]) {

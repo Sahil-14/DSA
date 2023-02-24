@@ -30,13 +30,24 @@ public class dp_prob33 {
         }
         int t = maxIndex;
         int newT = maxIndex;
-        do {
-            newT = t;
-            System.out.print(input[t] + " ");
-            t = result[t];
-        } while (t != newT);
+        // do {
+        // newT = t;
+        // System.out.print(input[t] + " ");
+        // t = result[t];
+        // } while (t != newT);
+        printrec(t, input, result);
         System.out.println();
         return maxVal;
+    }
+
+    private void printrec(int t, int[] input, int[] result) {
+        if (t == result[t]) {
+            System.out.print(input[t] + " ");
+            return;
+        }
+
+        printrec(result[t], input, result);
+        System.out.print(input[t] + " ");
     }
 
     public static void main(String[] args) {

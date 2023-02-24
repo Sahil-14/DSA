@@ -21,10 +21,9 @@ class prob9 {
           count += map.get(sum - k);
         map.put(sum, map.getOrDefault(sum, 0) + 1);
       }
-      return count;
+      return count; 
     }
 
-   
   }
 
   // Utility function to insert <key, value> into the multimap

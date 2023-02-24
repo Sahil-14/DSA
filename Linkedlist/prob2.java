@@ -1,5 +1,7 @@
+// //detect loop in a linked list
+
 import java.util.HashSet;
-//detect loop
+
 public class prob2 {
   Node head = null;;
 
@@ -77,7 +79,6 @@ public class prob2 {
         f = 1;
         break;
       }
-
     }
     if (f == 1) {
       return true;

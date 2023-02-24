@@ -3,6 +3,16 @@
 import java.util.PriorityQueue;
 
 public class prob3 {
+  // Time Complexity: O(N log N)
+  // Auxiliary Space: O(1)
+  // public static int kthSmallest(Integer[] arr, int K) {
+  // // Sort the given array
+  // Arrays.sort(arr);
+
+  // // Return K'th element in
+  // // the sorted array
+  // return arr[K - 1];
+  // }
   public static int kthSmallest(int arr[], int n, int k) {
     if (k > n) {
       return -1;
@@ -19,6 +29,12 @@ public class prob3 {
     return heap1.peek();
 
   }
+  
+  /**
+   * Time Complexity: O(K + (N-K) * Log K)
+   * Auxiliary Space: O(K)
+   * 
+   */
 
   public int kthLargest(int arr[], int n, int k) {
     if (k > n) {
@@ -33,7 +49,7 @@ public class prob3 {
         heap1.remove();
       }
     }
-    
+
     return heap1.peek();
 
   }

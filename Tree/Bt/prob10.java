@@ -4,6 +4,15 @@ class Height {
   int height = 0;
 }
 
+
+/**
+ * for height based function
+ * 
+ * Time Complexity: O(n^2) in case of full binary tree.
+Auxiliary Space: O(n) space for call stack since using recursion
+ * 
+ */
+
 public class prob10 {
   public boolean isBalanced(Node root, Height height) {
     if (root == null) {
@@ -45,3 +54,9 @@ public class prob10 {
 
   }
 }
+
+/**
+ * Time Complexity: O(n)
+ * 
+ * 
+ */

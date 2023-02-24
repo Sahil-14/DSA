@@ -1,8 +1,8 @@
 /**
  * circular ll traversal and counting
- * 
  */
 
+ 
 public class prob19 {
   Node push(Node head, int data) {
     Node ptr1 = new Node();

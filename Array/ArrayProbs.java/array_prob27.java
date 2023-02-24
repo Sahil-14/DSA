@@ -38,7 +38,7 @@ public class array_prob27 {
       next = -1;
       // System.out.println(element + "-->" + next);
       map.put(element, next);
-    }
+    
 
     for (i = 0; i < n; i++) {
       System.out.println(arr[i] + " --> " + map.get(arr[i]));

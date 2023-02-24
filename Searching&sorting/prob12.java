@@ -1,3 +1,7 @@
+////count inversion
+//Number of swaps to sort when only adjacent swapping allowed
+
+
 import java.util.*;
 
 public class prob12 {

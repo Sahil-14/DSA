@@ -7,7 +7,6 @@
  *         Given stockc prices for certain days and at most k transactions how
  *         to buy and sell
  *         to maximize profit.
- *
  *         Time complexity - O(number of transactions * number of days)
  *         Space complexity - O(number of transcations * number of days)
  *

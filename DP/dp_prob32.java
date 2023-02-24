@@ -1,5 +1,12 @@
 // count the number of bst for n keys
 // hint use catalin number
+
+/**
+ * 
+ * The first few Catalan numbers for n = 0, 1, 2, 3, … are 1, 1, 2, 5, 14, 42,
+ * 132, 429, 1430, 4862
+ * 
+ */
 public class dp_prob32 {
     public int countTrees(int n) {
         int T[] = new int[n + 1];

@@ -10,7 +10,7 @@ public class dp_prob15 {
             R[i] = -1;
         }
         for (int i = 0; i < coins.length; i++) {
-            for (int j = 1; j <= total; j++) { 
+            for (int j = 1; j <= total; j++) {
                 if (j >= coins[i]) {
                     if (T[j] > 1 + T[j - coins[i]]) {
                         T[j] = 1 + T[j - coins[i]];
@@ -23,24 +23,25 @@ public class dp_prob15 {
         return T[total];
     }
 
-   
-
     private void printCombinations(int R[], int coins[]) {
         if (R[R.length - 1] == -1) {
             System.out.println("No solutions possible");
             return;
         }
+        for (Integer i : R) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
         int start = R.length - 1;
         System.out.println("Coins used to form total are : ");
         while (start != 0) {
             int j = R[start];
-            System.out.print(coins[j] + " ");
+            System.out.println(j + " : " + coins[j]);
+            // System.out.print(coins[j] + " ");
             start -= coins[j];
         }
         System.out.println();
     }
-    
-
 
     public static void main(String[] args) {
         int total = 13;

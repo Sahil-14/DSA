@@ -33,7 +33,7 @@ public class prob28 {
       head = root;
     } else {
       root.left = prev;
-      prev.right = root; 
+      prev.right = root;
     }
     prev = root;
     BinaryTree2DoubleLinkedList(root.right);
@@ -48,17 +48,16 @@ public class prob28 {
     }
   }
 
-
   // Driver program to test above functions
   public static void main(String[] args) {
     // Let us create the tree as shown in above diagram
-    BinaryTree tree = new BinaryTree();
-    tree.root = new Node(10);
-    tree.root.left = new Node(12);
-    tree.root.right = new Node(15);
-    tree.root.left.left = new Node(25);
-    tree.root.left.right = new Node(30);
-    tree.root.right.left = new Node(36);
+    prob28 tree = new prob28();
+    tree.root = tree.new Node(10);
+    tree.root.left = tree.new Node(12);
+    tree.root.right = tree.new Node(15);
+    tree.root.left.left = tree.new Node(25);
+    tree.root.left.right = tree.new Node(30);
+    tree.root.right.left = tree.new Node(36);
 
     // convert to DLL
     tree.BinaryTree2DoubleLinkedList(tree.root);

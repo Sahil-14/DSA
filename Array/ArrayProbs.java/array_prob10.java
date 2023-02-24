@@ -1,3 +1,5 @@
+import java.util.*;
+
 //stock busy sell to maximum profit
 // Solution structure
 class Interval {
@@ -5,6 +7,7 @@ class Interval {
 }
 
 public class array_prob10 {
+  // at most 1 time
   public static int maxProfit(int prices[]) {
     int minPrice = Integer.MAX_VALUE;
     int maxProfit = 0;
@@ -72,6 +75,34 @@ public class array_prob10 {
 
     return;
 
+  }
+
+  void stockBuySellR(int price[], int n) {
+    if (n == 1)
+      return;
+
+    int count = 0;
+    ArrayList<Interval> list = new ArrayList<>();
+    int i = 0;
+    while (i < n - 1) {
+      while ((i < n - 1) && price[i] > price[i + 1]) {
+        i++;
+      }
+
+      if (i == n - 1) {
+        break;
+      }
+      Interval s = new Interval();
+      s.buy = i++;
+      while ((i < n) && price[i] > price[i - 1]) {
+        i++;
+      }
+
+      s.sell = i - 1;
+      list.add(s);
+      count++;
+
+    }
   }
 
   public static void main(String[] args) {

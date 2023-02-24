@@ -3,6 +3,18 @@
  * 11-10-15-12
  * 15->11->6->3->NULL
  * 
+ * delete node having greater value on right
+ * 
+ * revese and small
+ * 
+ */
+
+
+/*
+ * 2) In the reversed list, delete nodes which
+ * have a node with greater value node on left
+ * side. Note that head node is never deleted
+ * because it is the leftmost node.
  */
 public class prob25 {
   Node head; // head of list
@@ -41,7 +53,7 @@ public class prob25 {
      * side. Note that head node is never deleted
      * because it is the leftmost node.
      */
-    _delLesserNodes();
+    _delLesserNodes2();
 
     /*
      * 3) Reverse the linked list again to retain
@@ -65,6 +77,8 @@ public class prob25 {
       }
     }
   }
+
+ 
 
   void printList() {
     Node temp = head;
@@ -90,7 +104,7 @@ public class prob25 {
   }
 
   public static void main(String args[]) {
-    DeleteNodeOnRight llist = new DeleteNodeOnRight();
+    prob25 llist = new prob25();
 
     /*
      * Constructed Linked List is 12->15->10->11->
